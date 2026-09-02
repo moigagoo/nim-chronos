@@ -1,0 +1,97 @@
+nimTitle	httpcommon	httpcommon.html	module chronos/apps/http/httpcommon		0
+nim	HttpServerUnsecureConnectionTrackerName	httpcommon.html#HttpServerUnsecureConnectionTrackerName	const HttpServerUnsecureConnectionTrackerName		18
+nim	HttpServerSecureConnectionTrackerName	httpcommon.html#HttpServerSecureConnectionTrackerName	const HttpServerSecureConnectionTrackerName		20
+nim	HttpServerRequestTrackerName	httpcommon.html#HttpServerRequestTrackerName	const HttpServerRequestTrackerName		22
+nim	HttpServerResponseTrackerName	httpcommon.html#HttpServerResponseTrackerName	const HttpServerResponseTrackerName		24
+nim	HeadersMark	httpcommon.html#HeadersMark	const HeadersMark		27
+nim	PostMethods	httpcommon.html#PostMethods	const PostMethods		28
+nim	MaximumBodySizeError	httpcommon.html#MaximumBodySizeError	const MaximumBodySizeError		30
+nim	UserAgentHeader	httpcommon.html#UserAgentHeader	const UserAgentHeader		32
+nim	DateHeader	httpcommon.html#DateHeader	const DateHeader		33
+nim	HostHeader	httpcommon.html#HostHeader	const HostHeader		34
+nim	ConnectionHeader	httpcommon.html#ConnectionHeader	const ConnectionHeader		35
+nim	AcceptHeaderName	httpcommon.html#AcceptHeaderName	const AcceptHeaderName		36
+nim	ContentLengthHeader	httpcommon.html#ContentLengthHeader	const ContentLengthHeader		37
+nim	TransferEncodingHeader	httpcommon.html#TransferEncodingHeader	const TransferEncodingHeader		38
+nim	ContentEncodingHeader	httpcommon.html#ContentEncodingHeader	const ContentEncodingHeader		39
+nim	ContentTypeHeader	httpcommon.html#ContentTypeHeader	const ContentTypeHeader		40
+nim	ExpectHeader	httpcommon.html#ExpectHeader	const ExpectHeader		41
+nim	ServerHeader	httpcommon.html#ServerHeader	const ServerHeader		42
+nim	LocationHeader	httpcommon.html#LocationHeader	const LocationHeader		43
+nim	AuthorizationHeader	httpcommon.html#AuthorizationHeader	const AuthorizationHeader		44
+nim	ProxyAuthorizationHeader	httpcommon.html#ProxyAuthorizationHeader	const ProxyAuthorizationHeader		45
+nim	ContentDispositionHeader	httpcommon.html#ContentDispositionHeader	const ContentDispositionHeader		46
+nim	UrlEncodedContentType	httpcommon.html#UrlEncodedContentType	const UrlEncodedContentType		48
+nim	MultipartContentType	httpcommon.html#MultipartContentType	const MultipartContentType		49
+nim	HttpMessage	httpcommon.html#HttpMessage	object HttpMessage		52
+nim	HttpResult	httpcommon.html#HttpResult	type HttpResult		57
+nim	HttpResultCode	httpcommon.html#HttpResultCode	type HttpResultCode		58
+nim	HttpResultMessage	httpcommon.html#HttpResultMessage	type HttpResultMessage		59
+nim	HttpError	httpcommon.html#HttpError	object HttpError		61
+nim	HttpInterruptError	httpcommon.html#HttpInterruptError	object HttpInterruptError		62
+nim	HttpTransportError	httpcommon.html#HttpTransportError	object HttpTransportError		64
+nim	HttpAddressError	httpcommon.html#HttpAddressError	object HttpAddressError		65
+nim	HttpRedirectError	httpcommon.html#HttpRedirectError	object HttpRedirectError		66
+nim	HttpConnectionError	httpcommon.html#HttpConnectionError	object HttpConnectionError		67
+nim	HttpReadError	httpcommon.html#HttpReadError	object HttpReadError		68
+nim	HttpReadLimitError	httpcommon.html#HttpReadLimitError	object HttpReadLimitError		69
+nim	HttpDisconnectError	httpcommon.html#HttpDisconnectError	object HttpDisconnectError		70
+nim	HttpWriteError	httpcommon.html#HttpWriteError	object HttpWriteError		71
+nim	HttpProtocolError	httpcommon.html#HttpProtocolError	object HttpProtocolError		73
+nim	HttpCriticalError	httpcommon.html#HttpCriticalError	object HttpCriticalError		76
+nim	HttpRecoverableError	httpcommon.html#HttpRecoverableError	object HttpRecoverableError		77
+nim	HttpRequestError	httpcommon.html#HttpRequestError	object HttpRequestError		79
+nim	HttpRequestHeadersError	httpcommon.html#HttpRequestHeadersError	object HttpRequestHeadersError		80
+nim	HttpRequestBodyError	httpcommon.html#HttpRequestBodyError	object HttpRequestBodyError		81
+nim	HttpRequestHeadersTooLargeError	httpcommon.html#HttpRequestHeadersTooLargeError	object HttpRequestHeadersTooLargeError		82
+nim	HttpRequestBodyTooLargeError	httpcommon.html#HttpRequestBodyTooLargeError	object HttpRequestBodyTooLargeError		83
+nim	HttpResponseError	httpcommon.html#HttpResponseError	object HttpResponseError		84
+nim	HttpInvalidUsageError	httpcommon.html#HttpInvalidUsageError	object HttpInvalidUsageError		86
+nim	HttpUseClosedError	httpcommon.html#HttpUseClosedError	object HttpUseClosedError		87
+nim	KeyValueTuple	httpcommon.html#KeyValueTuple	tuple KeyValueTuple		89
+nim	TransferEncodingFlags	httpcommon.html#TransferEncodingFlags	enum TransferEncodingFlags		93
+nim	ContentEncodingFlags	httpcommon.html#ContentEncodingFlags	enum ContentEncodingFlags		96
+nim	QueryParamsFlag	httpcommon.html#QueryParamsFlag	enum QueryParamsFlag		99
+nim	HttpState	httpcommon.html#HttpState	enum HttpState		103
+nim	HttpAddressErrorType	httpcommon.html#HttpAddressErrorType	enum HttpAddressErrorType		106
+nim	CriticalHttpAddressError	httpcommon.html#CriticalHttpAddressError	const CriticalHttpAddressError		115
+nim	RecoverableHttpAddressError	httpcommon.html#RecoverableHttpAddressError	const RecoverableHttpAddressError		122
+nim	isCriticalError	httpcommon.html#isCriticalError,HttpAddressErrorType	proc isCriticalError(error: HttpAddressErrorType): bool		127
+nim	isRecoverableError	httpcommon.html#isRecoverableError,HttpAddressErrorType	proc isRecoverableError(error: HttpAddressErrorType): bool		130
+nim	toString	httpcommon.html#toString,HttpAddressErrorType	proc toString(error: HttpAddressErrorType): string		133
+nim	raiseHttpRequestBodyTooLargeError	httpcommon.html#raiseHttpRequestBodyTooLargeError	proc raiseHttpRequestBodyTooLargeError()		148
+nim	raiseHttpCriticalError	httpcommon.html#raiseHttpCriticalError,string	proc raiseHttpCriticalError(msg: string; code = Http400)		154
+nim	raiseHttpDisconnectError	httpcommon.html#raiseHttpDisconnectError	proc raiseHttpDisconnectError()		159
+nim	raiseHttpConnectionError	httpcommon.html#raiseHttpConnectionError,string	proc raiseHttpConnectionError(msg: string)		163
+nim	raiseHttpInterruptError	httpcommon.html#raiseHttpInterruptError	proc raiseHttpInterruptError()		167
+nim	raiseHttpReadError	httpcommon.html#raiseHttpReadError,string	proc raiseHttpReadError(msg: string)		171
+nim	raiseHttpProtocolError	httpcommon.html#raiseHttpProtocolError,string	proc raiseHttpProtocolError(msg: string)		175
+nim	raiseHttpProtocolError	httpcommon.html#raiseHttpProtocolError,HttpCode,string	proc raiseHttpProtocolError(code: HttpCode; msg: string)		179
+nim	raiseHttpProtocolError	httpcommon.html#raiseHttpProtocolError,HttpMessage	proc raiseHttpProtocolError(msg: HttpMessage)		183
+nim	raiseHttpWriteError	httpcommon.html#raiseHttpWriteError,string	proc raiseHttpWriteError(msg: string)		187
+nim	raiseHttpRedirectError	httpcommon.html#raiseHttpRedirectError,string	proc raiseHttpRedirectError(msg: string)		191
+nim	raiseHttpAddressError	httpcommon.html#raiseHttpAddressError,string	proc raiseHttpAddressError(msg: string)		195
+nim	newHttpInterruptError	httpcommon.html#newHttpInterruptError	proc newHttpInterruptError(): ref HttpInterruptError		199
+nim	newHttpReadError	httpcommon.html#newHttpReadError,string	proc newHttpReadError(message: string): ref HttpReadError		202
+nim	newHttpWriteError	httpcommon.html#newHttpWriteError,string	proc newHttpWriteError(message: string): ref HttpWriteError		205
+nim	newHttpUseClosedError	httpcommon.html#newHttpUseClosedError	proc newHttpUseClosedError(): ref HttpUseClosedError		208
+nim	init	httpcommon.html#init,typedesc[HttpMessage],HttpCode,string,MediaType	proc init(t: typedesc[HttpMessage]; code: HttpCode; message: string;\n     contentType: MediaType): HttpMessage		211
+nim	init	httpcommon.html#init,typedesc[HttpMessage],HttpCode,string,string	proc init(t: typedesc[HttpMessage]; code: HttpCode; message: string;\n     contentType: string): HttpMessage		215
+nim	init	httpcommon.html#init,typedesc[HttpMessage],HttpCode,string	proc init(t: typedesc[HttpMessage]; code: HttpCode; message: string): HttpMessage		220
+nim	init	httpcommon.html#init,typedesc[HttpMessage],HttpCode	proc init(t: typedesc[HttpMessage]; code: HttpCode): HttpMessage		225
+nim	queryParams	httpcommon.html#queryParams.i,string,set[QueryParamsFlag]	iterator queryParams(query: string; flags: set[QueryParamsFlag] = {}): KeyValueTuple		228
+nim	getTransferEncodings	httpcommon.html#getTransferEncodings,openArray[string]	proc getTransferEncodings(ch: openArray[string]): HttpResult[\n    seq[TransferEncodingFlags]]		242
+nim	getTransferEncoding	httpcommon.html#getTransferEncoding,openArray[string]	proc getTransferEncoding(ch: openArray[string]): HttpResult[\n    set[TransferEncodingFlags]]		285
+nim	getContentEncodings	httpcommon.html#getContentEncodings,openArray[string]	proc getContentEncodings(ch: openArray[string]): HttpResult[seq[ContentEncodingFlags]]		298
+nim	getContentEncoding	httpcommon.html#getContentEncoding,openArray[string]	proc getContentEncoding(ch: openArray[string]): HttpResult[set[ContentEncodingFlags]]		330
+nim	isPersistent	httpcommon.html#isPersistent,HttpVersion,HttpTable	proc isPersistent(version: HttpVersion; headers: HttpTable): bool		343
+nim	getContentType	httpcommon.html#getContentType,openArray[string]	proc getContentType(ch: openArray[string]): HttpResult[ContentTypeData]		359
+nim	bytesToString	httpcommon.html#bytesToString,openArray[byte],openArray[char]	proc bytesToString(src: openArray[byte]; dst: var openArray[char])		371
+nim	stringToBytes	httpcommon.html#stringToBytes,openArray[char],openArray[byte]	proc stringToBytes(src: openArray[char]; dst: var openArray[byte])		380
+nim	bytesToString	httpcommon.html#bytesToString,openArray[byte]	proc bytesToString(src: openArray[byte]): string		389
+nim	stringToBytes	httpcommon.html#stringToBytes,openArray[char]	proc stringToBytes(src: openArray[char]): seq[byte]		402
+nim	encodeBasicAuth	httpcommon.html#encodeBasicAuth,string,string	proc encodeBasicAuth(username, password: string): string		415
+nimgrp	bytestostring	httpcommon.html#bytesToString-procs-all	proc		371
+nimgrp	raisehttpprotocolerror	httpcommon.html#raiseHttpProtocolError-procs-all	proc		175
+nimgrp	init	httpcommon.html#init-procs-all	proc		211
+nimgrp	stringtobytes	httpcommon.html#stringToBytes-procs-all	proc		380

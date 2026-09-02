@@ -1,0 +1,8 @@
+nimTitle	asyncmacro	_._/_._/internal/asyncmacro.html	module chronos/internal/asyncmacro		0
+nim	await	_._/_._/internal/asyncmacro.html#await.t,Future[T]	template await[T](f: Future[T]): T		571
+nim	await	_._/_._/internal/asyncmacro.html#await.t,InternalRaisesFuture[T,E]	template await[T, E](fut: InternalRaisesFuture[T, E]): T		593
+nim	awaitne	_._/_._/internal/asyncmacro.html#awaitne.t,Future[T]	template awaitne[T](f: Future[T]): Future[T]		616
+nim	async	_._/_._/internal/asyncmacro.html#async.m,untyped,untyped	macro async(params, prc: untyped): untyped		624
+nim	async	_._/_._/internal/asyncmacro.html#async.m,untyped	macro async(prc: untyped): untyped		634
+nimgrp	async	_._/_._/internal/asyncmacro.html#async-macros-all	macro		624
+nimgrp	await	_._/_._/internal/asyncmacro.html#await-templates-all	template		571

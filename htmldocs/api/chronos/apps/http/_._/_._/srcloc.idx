@@ -1,0 +1,4 @@
+nimTitle	srcloc	_._/_._/srcloc.html	module chronos/srcloc		0
+nim	SrcLoc	_._/_._/srcloc.html#SrcLoc	object SrcLoc		15
+nim	`$`	_._/_._/srcloc.html#$,ptr.SrcLoc	proc `$`(loc: ptr SrcLoc): string		20
+nim	getSrcLocation	_._/_._/srcloc.html#getSrcLocation.t,staticstring	template getSrcLocation(procedure: static string = ""): ptr SrcLoc		39

@@ -1,0 +1,69 @@
+nimTitle	asyncsync	chronos/asyncsync.html	module chronos/asyncsync		0
+nim	AsyncLock	chronos/asyncsync.html#AsyncLock	type AsyncLock		20
+nim	AsyncEvent	chronos/asyncsync.html#AsyncEvent	type AsyncEvent		33
+nim	AsyncQueue	chronos/asyncsync.html#AsyncQueue	type AsyncQueue		46
+nim	AsyncQueueEmptyError	chronos/asyncsync.html#AsyncQueueEmptyError	object AsyncQueueEmptyError		58
+nim	AsyncQueueFullError	chronos/asyncsync.html#AsyncQueueFullError	object AsyncQueueFullError		60
+nim	AsyncLockError	chronos/asyncsync.html#AsyncLockError	object AsyncLockError		62
+nim	AsyncEventQueueFullError	chronos/asyncsync.html#AsyncEventQueueFullError	object AsyncEventQueueFullError		65
+nim	EventQueueKey	chronos/asyncsync.html#EventQueueKey	type EventQueueKey		67
+nim	EventQueueReader	chronos/asyncsync.html#EventQueueReader	object EventQueueReader		69
+nim	AsyncEventQueue	chronos/asyncsync.html#AsyncEventQueue	type AsyncEventQueue		75
+nim	AsyncSemaphore	chronos/asyncsync.html#AsyncSemaphore	type AsyncSemaphore		82
+nim	AsyncSemaphoreError	chronos/asyncsync.html#AsyncSemaphoreError	object AsyncSemaphoreError		95
+nim	newAsyncLock	chronos/asyncsync.html#newAsyncLock	proc newAsyncLock(): AsyncLock		97
+nim	acquire	chronos/asyncsync.html#acquire,AsyncLock	proc acquire(lock: AsyncLock): InternalRaisesFuture[void, (CancelledError,)]		127
+nim	locked	chronos/asyncsync.html#locked,AsyncLock	proc locked(lock: AsyncLock): bool		142
+nim	release	chronos/asyncsync.html#release,AsyncLock	proc release(lock: AsyncLock)		146
+nim	newAsyncEvent	chronos/asyncsync.html#newAsyncEvent	proc newAsyncEvent(): AsyncEvent		165
+nim	wait	chronos/asyncsync.html#wait,AsyncEvent	proc wait(event: AsyncEvent): InternalRaisesFuture[void, (CancelledError,)]		175
+nim	fire	chronos/asyncsync.html#fire,AsyncEvent	proc fire(event: AsyncEvent)		190
+nim	clear	chronos/asyncsync.html#clear,AsyncEvent	proc clear(event: AsyncEvent)		201
+nim	isSet	chronos/asyncsync.html#isSet,AsyncEvent	proc isSet(event: AsyncEvent): bool		207
+nim	newAsyncQueue	chronos/asyncsync.html#newAsyncQueue,int	proc newAsyncQueue[T](maxsize: int = 0): AsyncQueue[T]		211
+nim	full	chronos/asyncsync.html#full,AsyncQueue[T]	proc full[T](aq: AsyncQueue[T]): bool		235
+nim	empty	chronos/asyncsync.html#empty,AsyncQueue[T]	proc empty[T](aq: AsyncQueue[T]): bool		245
+nim	addFirstNoWait	chronos/asyncsync.html#addFirstNoWait,AsyncQueue[T],T	proc addFirstNoWait[T](aq: AsyncQueue[T]; item: T)		267
+nim	addLastNoWait	chronos/asyncsync.html#addLastNoWait,AsyncQueue[T],T	proc addLastNoWait[T](aq: AsyncQueue[T]; item: T)		276
+nim	popFirstNoWait	chronos/asyncsync.html#popFirstNoWait,AsyncQueue[T]	proc popFirstNoWait[T](aq: AsyncQueue[T]): T		285
+nim	popLastNoWait	chronos/asyncsync.html#popLastNoWait,AsyncQueue[T]	proc popLastNoWait[T](aq: AsyncQueue[T]): T		294
+nim	addFirst	chronos/asyncsync.html#addFirst,AsyncQueue[T],T	proc addFirst[T](aq: AsyncQueue[T]; item: T): InternalRaisesFuture[void,\n    (CancelledError,)]		304
+nim	addLast	chronos/asyncsync.html#addLast,AsyncQueue[T],T	proc addLast[T](aq: AsyncQueue[T]; item: T): InternalRaisesFuture[void,\n    (CancelledError,)]		320
+nim	popFirst	chronos/asyncsync.html#popFirst,AsyncQueue[T]	proc popFirst[T](aq: AsyncQueue[T]): InternalRaisesFuture[T, (CancelledError,)]		336
+nim	popLast	chronos/asyncsync.html#popLast,AsyncQueue[T]	proc popLast[T](aq: AsyncQueue[T]): InternalRaisesFuture[T, (CancelledError,)]		352
+nim	putNoWait	chronos/asyncsync.html#putNoWait,AsyncQueue[T],T	proc putNoWait[T](aq: AsyncQueue[T]; item: T)		367
+nim	getNoWait	chronos/asyncsync.html#getNoWait,AsyncQueue[T]	proc getNoWait[T](aq: AsyncQueue[T]): T		372
+nim	put	chronos/asyncsync.html#put,AsyncQueue[T],T	proc put[T](aq: AsyncQueue[T]; item: T): InternalRaisesFuture[void, (CancelledError,)]		378
+nim	get	chronos/asyncsync.html#get,AsyncQueue[T]	proc get[T](aq: AsyncQueue[T]): InternalRaisesFuture[T, (CancelledError,)]		383
+nim	clear	chronos/asyncsync.html#clear,AsyncQueue[T]	proc clear[T](aq: AsyncQueue[T])		387
+nim	len	chronos/asyncsync.html#len,AsyncQueue[T]	proc len[T](aq: AsyncQueue[T]): int		391
+nim	size	chronos/asyncsync.html#size,AsyncQueue[T]	proc size[T](aq: AsyncQueue[T]): int		395
+nim	`[]`	chronos/asyncsync.html#[],AsyncQueue[T],Natural	proc `[]`[T](aq: AsyncQueue[T]; i: Natural): T		399
+nim	`[]`	chronos/asyncsync.html#[],AsyncQueue[T],BackwardsIndex	proc `[]`[T](aq: AsyncQueue[T]; i: BackwardsIndex): T		404
+nim	`[]=`	chronos/asyncsync.html#[]=,AsyncQueue[T],Natural,T	proc `[]=`[T](aq: AsyncQueue[T]; i: Natural; item: T)		409
+nim	`[]=`	chronos/asyncsync.html#[]=,AsyncQueue[T],BackwardsIndex,T	proc `[]=`[T](aq: AsyncQueue[T]; i: BackwardsIndex; item: T)		413
+nim	items	chronos/asyncsync.html#items.i,AsyncQueue[T]	iterator items[T](aq: AsyncQueue[T]): T		417
+nim	mitems	chronos/asyncsync.html#mitems.i,AsyncQueue[T]	iterator mitems[T](aq: AsyncQueue[T]): var T		422
+nim	pairs	chronos/asyncsync.html#pairs.i,AsyncQueue[T]	iterator pairs[T](aq: AsyncQueue[T]): tuple[key: int, val: T]		427
+nim	contains	chronos/asyncsync.html#contains,AsyncQueue[T],T	proc contains[T](aq: AsyncQueue[T]; item: T): bool		432
+nim	`$`	chronos/asyncsync.html#$,AsyncQueue[T]	proc `$`[T](aq: AsyncQueue[T]): string		439
+nim	newAsyncEventQueue	chronos/asyncsync.html#newAsyncEventQueue,int	proc newAsyncEventQueue[T](limitSize = 0): AsyncEventQueue[T]		479
+nim	len	chronos/asyncsync.html#len,AsyncEventQueue	proc len(ab: AsyncEventQueue): int		498
+nim	register	chronos/asyncsync.html#register,AsyncEventQueue	proc register(ab: AsyncEventQueue): EventQueueKey		501
+nim	unregister	chronos/asyncsync.html#unregister,AsyncEventQueue,EventQueueKey	proc unregister(ab: AsyncEventQueue; key: EventQueueKey)		509
+nim	close	chronos/asyncsync.html#close,AsyncEventQueue	proc close(ab: AsyncEventQueue)		520
+nim	closeWait	chronos/asyncsync.html#closeWait,AsyncEventQueue	proc closeWait(ab: AsyncEventQueue): InternalRaisesFuture[void, void]		528
+nim	readerOverflow	chronos/asyncsync.html#readerOverflow.t,AsyncEventQueue,EventQueueReader	template readerOverflow(ab: AsyncEventQueue; reader: EventQueueReader): bool		543
+nim	emit	chronos/asyncsync.html#emit,AsyncEventQueue[T],T	proc emit[T](ab: AsyncEventQueue[T]; data: T)		547
+nim	waitEvents	chronos/asyncsync.html#waitEvents,AsyncEventQueue[T],EventQueueKey,int	proc waitEvents[T](ab: AsyncEventQueue[T]; key: EventQueueKey; eventsCount = -1): InternalRaisesFuture[\n    seq[T], (AsyncEventQueueFullError, CancelledError)]		585
+nim	newAsyncSemaphore	chronos/asyncsync.html#newAsyncSemaphore,int	proc newAsyncSemaphore(size: int = 1): AsyncSemaphore		649
+nim	availableSlots	chronos/asyncsync.html#availableSlots,AsyncSemaphore	proc availableSlots(s: AsyncSemaphore): int		659
+nim	tryAcquire	chronos/asyncsync.html#tryAcquire,AsyncSemaphore	proc tryAcquire(s: AsyncSemaphore): bool		662
+nim	acquire	chronos/asyncsync.html#acquire,AsyncSemaphore	proc acquire(s: AsyncSemaphore): InternalRaisesFuture[void, (CancelledError,)]		673
+nim	release	chronos/asyncsync.html#release,AsyncSemaphore	proc release(s: AsyncSemaphore)		687
+nimgrp	[]=	chronos/asyncsync.html#[]=-procs-all	proc		409
+nimgrp	release	chronos/asyncsync.html#release-procs-all	proc		146
+nimgrp	[]	chronos/asyncsync.html#[]-procs-all	proc		399
+nimgrp	acquire	chronos/asyncsync.html#acquire-procs-all	proc		127
+nimgrp	clear	chronos/asyncsync.html#clear-procs-all	proc		201
+nimgrp	len	chronos/asyncsync.html#len-procs-all	proc		391

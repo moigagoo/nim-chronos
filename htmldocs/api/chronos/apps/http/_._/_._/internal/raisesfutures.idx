@@ -1,0 +1,16 @@
+nimTitle	raisesfutures	_._/_._/internal/raisesfutures.html	module chronos/internal/raisesfutures		0
+nim	InternalRaisesFuture	_._/_._/internal/raisesfutures.html#InternalRaisesFuture	type InternalRaisesFuture		16
+nim	makeNoRaises	_._/_._/internal/raisesfutures.html#makeNoRaises	proc makeNoRaises(): NimNode		30
+nim	isNoRaises	_._/_._/internal/raisesfutures.html#isNoRaises,NimNode	proc isNoRaises(n: NimNode): bool		54
+nim	Raising	_._/_._/internal/raisesfutures.html#Raising.m,typedesc[Future[T]],typed	macro Raising[T](F: typedesc[Future[T]]; E: typed): untyped		70
+nim	init	_._/_._/internal/raisesfutures.html#init.t,typeInternalRaisesFuture[T,E],static[string]	template init[T, E](F: type InternalRaisesFuture[T, E]; fromProc: static[string] = ""): F:type		102
+nim	init	_._/_._/internal/raisesfutures.html#init.t,typeInternalRaisesFuture[T,E],static[string],static[FutureFlags]	template init[T, E](F: type InternalRaisesFuture[T, E]; fromProc: static[string] = "";\n           flags: static[FutureFlags]): F:type		117
+nim	prepend	_._/_._/internal/raisesfutures.html#prepend.m,typedesc,varargs[typed]	macro prepend(tup: typedesc; typs: varargs[typed]): typedesc		143
+nim	remove	_._/_._/internal/raisesfutures.html#remove.m,typedesc,varargs[typed]	macro remove(tup: typedesc; typs: varargs[typed]): typedesc		155
+nim	union	_._/_._/internal/raisesfutures.html#union.m,typedesc,typedesc	macro union(tup0: typedesc; tup1: typedesc): typedesc		164
+nim	getRaisesTypes	_._/_._/internal/raisesfutures.html#getRaisesTypes,NimNode	proc getRaisesTypes(raises: NimNode): NimNode		181
+nim	checkRaises	_._/_._/internal/raisesfutures.html#checkRaises.m,InternalRaisesFuture,typed,ref.T,staticbool	macro checkRaises[T: CatchableError](future: InternalRaisesFuture; raises: typed;\n                               error: ref T; warn: static bool = true): untyped		187
+nim	failed	_._/_._/internal/raisesfutures.html#failed,InternalRaisesFuture[T,void]	proc failed[T](future: InternalRaisesFuture[T, void]): bool		239
+nim	error	_._/_._/internal/raisesfutures.html#error,InternalRaisesFuture[T,void]	proc error[T](future: InternalRaisesFuture[T, void]): ref CatchableError		246
+nim	readError	_._/_._/internal/raisesfutures.html#readError,InternalRaisesFuture[T,void]	proc readError[T](future: InternalRaisesFuture[T, void]): ref CatchableError		252
+nimgrp	init	_._/_._/internal/raisesfutures.html#init-templates-all	template		102

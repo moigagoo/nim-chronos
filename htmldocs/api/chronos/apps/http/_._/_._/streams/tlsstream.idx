@@ -1,0 +1,34 @@
+nimTitle	tlsstream	_._/_._/streams/tlsstream.html	module chronos/streams/tlsstream		0
+nim	TLSSessionCacheBufferSize	_._/_._/streams/tlsstream.html#TLSSessionCacheBufferSize	const TLSSessionCacheBufferSize		34
+nim	TLSVersion	_._/_._/streams/tlsstream.html#TLSVersion	enum TLSVersion		40
+nim	TLSFlags	_._/_._/streams/tlsstream.html#TLSFlags	enum TLSFlags		43
+nim	TLSPrivateKey	_._/_._/streams/tlsstream.html#TLSPrivateKey	type TLSPrivateKey		54
+nim	TLSCertificate	_._/_._/streams/tlsstream.html#TLSCertificate	type TLSCertificate		62
+nim	TLSSessionCache	_._/_._/streams/tlsstream.html#TLSSessionCache	type TLSSessionCache		66
+nim	PEMElement	_._/_._/streams/tlsstream.html#PEMElement	object PEMElement		70
+nim	TrustAnchorStore	_._/_._/streams/tlsstream.html#TrustAnchorStore	type TrustAnchorStore		77
+nim	TLSStreamWriter	_._/_._/streams/tlsstream.html#TLSStreamWriter	type TLSStreamWriter		80
+nim	TLSStreamReader	_._/_._/streams/tlsstream.html#TLSStreamReader	type TLSStreamReader		85
+nim	TLSAsyncStream	_._/_._/streams/tlsstream.html#TLSAsyncStream	type TLSAsyncStream		93
+nim	SomeTLSStreamType	_._/_._/streams/tlsstream.html#SomeTLSStreamType	type SomeTLSStreamType		118
+nim	SomeTrustAnchorType	_._/_._/streams/tlsstream.html#SomeTrustAnchorType	type SomeTrustAnchorType		119
+nim	TLSStreamError	_._/_._/streams/tlsstream.html#TLSStreamError	object TLSStreamError		121
+nim	TLSStreamHandshakeError	_._/_._/streams/tlsstream.html#TLSStreamHandshakeError	object TLSStreamHandshakeError		122
+nim	TLSStreamInitError	_._/_._/streams/tlsstream.html#TLSStreamInitError	object TLSStreamInitError		123
+nim	TLSStreamReadError	_._/_._/streams/tlsstream.html#TLSStreamReadError	object TLSStreamReadError		124
+nim	TLSStreamWriteError	_._/_._/streams/tlsstream.html#TLSStreamWriteError	object TLSStreamWriteError		125
+nim	TLSStreamProtocolError	_._/_._/streams/tlsstream.html#TLSStreamProtocolError	object TLSStreamProtocolError		126
+nim	new	_._/_._/streams/tlsstream.html#new,typedesc[TrustAnchorStore],openArray[X509TrustAnchor]	proc new(T: typedesc[TrustAnchorStore]; anchors: openArray[X509TrustAnchor]): TrustAnchorStore		169
+nim	dumpState	_._/_._/streams/tlsstream.html#dumpState,cuint	proc dumpState(state: cuint): string		178
+nim	handshake	_._/_._/streams/tlsstream.html#handshake,TLSAsyncStream	proc handshake(rws: TLSAsyncStream): InternalRaisesFuture[void,\n    (CancelledError, AsyncStreamError)]		323
+nim	newTLSClientAsyncStream	_._/_._/streams/tlsstream.html#newTLSClientAsyncStream,AsyncStreamReader,AsyncStreamWriter,string,set[TLSFlags],SomeTrustAnchorType,TLSCertificate,TLSPrivateKey,openArray[string]	proc newTLSClientAsyncStream(rsource: AsyncStreamReader; wsource: AsyncStreamWriter;\n                        serverName: string; bufferSize = SSL_BUFSIZE_BIDI;\n                        minVersion = TLSVersion.TLS12;\n                        maxVersion = TLSVersion.TLS12;\n                        flags: set[TLSFlags] = {}; trustAnchors: SomeTrustAnchorType = MozillaTrustAnchors;\n                        certificate: TLSCertificate = nil;\n                        privateKey: TLSPrivateKey = nil;\n                        alpnProtocols: openArray[string] = []): TLSAsyncStream		447
+nim	newTLSServerAsyncStream	_._/_._/streams/tlsstream.html#newTLSServerAsyncStream,AsyncStreamReader,AsyncStreamWriter,TLSPrivateKey,TLSCertificate,TLSSessionCache,set[TLSFlags],openArray[string]	proc newTLSServerAsyncStream(rsource: AsyncStreamReader; wsource: AsyncStreamWriter;\n                        privateKey: TLSPrivateKey; certificate: TLSCertificate;\n                        bufferSize = SSL_BUFSIZE_BIDI;\n                        minVersion = TLSVersion.TLS11;\n                        maxVersion = TLSVersion.TLS12;\n                        cache: TLSSessionCache = nil; flags: set[TLSFlags] = {};\n                        alpnProtocols: openArray[string] = []): TLSAsyncStream		587
+nim	init	_._/_._/streams/tlsstream.html#init,typedesc[TLSPrivateKey],openArray[byte]	proc init(tt: typedesc[TLSPrivateKey]; data: openArray[byte]): TLSPrivateKey		723
+nim	pemDecode	_._/_._/streams/tlsstream.html#pemDecode,openArray[char]	proc pemDecode(data: openArray[char]): seq[PEMElement]		747
+nim	init	_._/_._/streams/tlsstream.html#init,typedesc[TLSPrivateKey],openArray[char]	proc init(tt: typedesc[TLSPrivateKey]; data: openArray[char]): TLSPrivateKey		789
+nim	init	_._/_._/streams/tlsstream.html#init,typedesc[TLSCertificate],openArray[char]	proc init(tt: typedesc[TLSCertificate]; data: openArray[char]): TLSCertificate		807
+nim	init	_._/_._/streams/tlsstream.html#init,typedesc[TLSSessionCache],int	proc init(tt: typedesc[TLSSessionCache]; size: int = TLSSessionCacheBufferSize): TLSSessionCache		835
+nim	handshake	_._/_._/streams/tlsstream.html#handshake,SomeTLSStreamType	proc handshake(rws: SomeTLSStreamType): InternalRaisesFuture[void,\n    (CancelledError, AsyncStreamError)]		846
+nim	getSelectedAlpnProtocol	_._/_._/streams/tlsstream.html#getSelectedAlpnProtocol,TLSAsyncStream	proc getSelectedAlpnProtocol(stream: TLSAsyncStream): string		870
+nimgrp	handshake	_._/_._/streams/tlsstream.html#handshake-procs-all	proc		322
+nimgrp	init	_._/_._/streams/tlsstream.html#init-procs-all	proc		723

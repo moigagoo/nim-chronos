@@ -1,0 +1,117 @@
+nimTitle	httpserver	httpserver.html	module chronos/apps/http/httpserver		0
+nim	HttpServerFlags	httpserver.html#HttpServerFlags	enum HttpServerFlags		24
+nim	HttpServerError	httpserver.html#HttpServerError	enum HttpServerError		38
+nim	HttpServerState	httpserver.html#HttpServerState	enum HttpServerState		41
+nim	HttpProcessError	httpserver.html#HttpProcessError	object HttpProcessError		44
+nim	ConnectionFence	httpserver.html#ConnectionFence	type ConnectionFence		50
+nim	RequestFence	httpserver.html#RequestFence	type RequestFence		53
+nim	HttpRequestFlags	httpserver.html#HttpRequestFlags	enum HttpRequestFlags		57
+nim	HttpResponseFlags	httpserver.html#HttpResponseFlags	enum HttpResponseFlags		60
+nim	HttpResponseStreamType	httpserver.html#HttpResponseStreamType	enum HttpResponseStreamType		63
+nim	HttpProcessExitType	httpserver.html#HttpProcessExitType	enum HttpProcessExitType		66
+nim	HttpResponseState	httpserver.html#HttpResponseState	enum HttpResponseState		69
+nim	HttpProcessCallback	httpserver.html#HttpProcessCallback	type HttpProcessCallback		72
+nim	HttpProcessCallback2	httpserver.html#HttpProcessCallback2	type HttpProcessCallback2		76
+nim	HttpConnectionCallback	httpserver.html#HttpConnectionCallback	type HttpConnectionCallback		80
+nim	HttpCloseConnectionCallback	httpserver.html#HttpCloseConnectionCallback	type HttpCloseConnectionCallback		85
+nim	HttpConnectionHolder	httpserver.html#HttpConnectionHolder	object HttpConnectionHolder		89
+nim	HttpConnectionHolderRef	httpserver.html#HttpConnectionHolderRef	type HttpConnectionHolderRef		97
+nim	HttpServer	httpserver.html#HttpServer	object HttpServer		99
+nim	HttpServerRef	httpserver.html#HttpServerRef	type HttpServerRef		120
+nim	HttpRequest	httpserver.html#HttpRequest	object HttpRequest		122
+nim	HttpRequestRef	httpserver.html#HttpRequestRef	type HttpRequestRef		142
+nim	HttpResponse	httpserver.html#HttpResponse	object HttpResponse		144
+nim	HttpResponseRef	httpserver.html#HttpResponseRef	type HttpResponseRef		155
+nim	HttpConnection	httpserver.html#HttpConnection	object HttpConnection		157
+nim	HttpConnectionRef	httpserver.html#HttpConnectionRef	type HttpConnectionRef		170
+nim	MiddlewareHandleCallback	httpserver.html#MiddlewareHandleCallback	type MiddlewareHandleCallback		172
+nim	HttpServerMiddleware	httpserver.html#HttpServerMiddleware	object HttpServerMiddleware		177
+nim	HttpServerMiddlewareRef	httpserver.html#HttpServerMiddlewareRef	type HttpServerMiddlewareRef		180
+nim	ByteChar	httpserver.html#ByteChar	type ByteChar		182
+nim	defaultResponse	httpserver.html#defaultResponse,ref.CatchableError	proc defaultResponse(exc: ref CatchableError): HttpResponseRef		197
+nim	defaultResponse	httpserver.html#defaultResponse,HttpMessage	proc defaultResponse(msg: HttpMessage): HttpResponseRef		199
+nim	error	httpserver.html#error,HttpProcessError	proc error(e: HttpProcessError): HttpServerError		208
+nim	new	httpserver.html#new,typedesc[HttpServerRef],TransportAddress,HttpProcessCallback2,set[HttpServerFlags],set[ServerFlags],string,int,int,int,int,int,openArray[HttpServerMiddlewareRef]	proc new(htype: typedesc[HttpServerRef]; address: TransportAddress;\n    processCallback: HttpProcessCallback2;\n    serverFlags: set[HttpServerFlags] = {};\n    socketFlags: set[ServerFlags] = {ReuseAddr}; serverUri = Uri();\n    serverIdent = ""; maxConnections: int = -1;\n    bufferSize: int = chronosTransportDefaultBufferSize;\n    backlogSize: int = DefaultBacklogSize; httpHeadersTimeout = 10.seconds;\n    maxHeadersSize: int = 8192; maxRequestBodySize: int = 1048576;\n    dualstack = DualStackType.Auto;\n    middlewares: openArray[HttpServerMiddlewareRef] = []): HttpResult[\n    HttpServerRef]		245
+nim	new	httpserver.html#new,typedesc[HttpServerRef],TransportAddress,HttpProcessCallback,set[HttpServerFlags],set[ServerFlags],string,int,int,int,int,int,openArray[HttpServerMiddlewareRef]	proc new(htype: typedesc[HttpServerRef]; address: TransportAddress;\n    processCallback: HttpProcessCallback;\n    serverFlags: set[HttpServerFlags] = {};\n    socketFlags: set[ServerFlags] = {ReuseAddr}; serverUri = Uri();\n    serverIdent = ""; maxConnections: int = -1;\n    bufferSize: int = chronosTransportDefaultBufferSize;\n    backlogSize: int = DefaultBacklogSize; httpHeadersTimeout = 10.seconds;\n    maxHeadersSize: int = 8192; maxRequestBodySize: int = 1048576;\n    dualstack = DualStackType.Auto;\n    middlewares: openArray[HttpServerMiddlewareRef] = []): HttpResult[\n    HttpServerRef]		300
+nim	getResponseState	httpserver.html#getResponseState,HttpResponseRef	proc getResponseState(response: HttpResponseRef): HttpResponseState		352
+nim	getResponse	httpserver.html#getResponse,HttpRequestRef	proc getResponse(req: HttpRequestRef): HttpResponseRef		364
+nim	getHostname	httpserver.html#getHostname,HttpServerRef	proc getHostname(server: HttpServerRef): string		379
+nim	defaultResponse	httpserver.html#defaultResponse	proc defaultResponse(): HttpResponseRef		385
+nim	defaultResponse	httpserver.html#defaultResponse,HttpProcessError	proc defaultResponse(err: HttpProcessError): HttpResponseRef		404
+nim	dropResponse	httpserver.html#dropResponse	proc dropResponse(): HttpResponseRef		407
+nim	codeResponse	httpserver.html#codeResponse,HttpCode	proc codeResponse(status: HttpCode): HttpResponseRef		410
+nim	dumbResponse	httpserver.html#dumbResponse	proc dumbResponse(): HttpResponseRef		413
+nim	hasBody	httpserver.html#hasBody,HttpRequestRef	proc hasBody(request: HttpRequestRef): bool		425
+nim	updateRequest	httpserver.html#updateRequest,HttpRequestRef,string,HttpMethod,HttpVersion,string,HttpTable	proc updateRequest(request: HttpRequestRef; scheme: string; meth: HttpMethod;\n              version: HttpVersion; requestUri: string; headers: HttpTable): HttpResultMessage[\n    void]		440
+nim	updateRequest	httpserver.html#updateRequest,HttpRequestRef,HttpMethod,string,HttpTable	proc updateRequest(request: HttpRequestRef; meth: HttpMethod; requestUri: string;\n              headers: HttpTable): HttpResultMessage[void]		574
+nim	updateRequest	httpserver.html#updateRequest,HttpRequestRef,string,HttpTable	proc updateRequest(request: HttpRequestRef; requestUri: string; headers: HttpTable): HttpResultMessage[\n    void]		581
+nim	updateRequest	httpserver.html#updateRequest,HttpRequestRef,string	proc updateRequest(request: HttpRequestRef; requestUri: string): HttpResultMessage[\n    void]		587
+nim	updateRequest	httpserver.html#updateRequest,HttpRequestRef,HttpTable	proc updateRequest(request: HttpRequestRef; headers: HttpTable): HttpResultMessage[\n    void]		593
+nim	getBodyReader	httpserver.html#getBodyReader,HttpRequestRef	proc getBodyReader(request: HttpRequestRef): HttpResult[HttpBodyReader]		627
+nim	handleExpect	httpserver.html#handleExpect,HttpRequestRef	proc handleExpect(request: HttpRequestRef): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		649
+nim	getBody	httpserver.html#getBody,HttpRequestRef	proc getBody(request: HttpRequestRef): InternalRaisesFuture[seq[byte],\n    (CancelledError, HttpTransportError, HttpProtocolError)]		663
+nim	consumeBody	httpserver.html#consumeBody,HttpRequestRef	proc consumeBody(request: HttpRequestRef): InternalRaisesFuture[void,\n    (CancelledError, HttpTransportError, HttpProtocolError)]		680
+nim	getAcceptInfo	httpserver.html#getAcceptInfo,HttpRequestRef	proc getAcceptInfo(request: HttpRequestRef): Result[AcceptInfo, cstring]		694
+nim	preferredContentMediaType	httpserver.html#preferredContentMediaType,string	proc preferredContentMediaType(acceptHeader: string): MediaType		701
+nim	preferredContentType	httpserver.html#preferredContentType,string,varargs[MediaType]	proc preferredContentType(acceptHeader: string; types: varargs[MediaType]): Result[\n    MediaType, cstring]		715
+nim	preferredContentMediaType	httpserver.html#preferredContentMediaType,HttpRequestRef	proc preferredContentMediaType(request: HttpRequestRef): MediaType		796
+nim	preferredContentType	httpserver.html#preferredContentType,HttpRequestRef,varargs[MediaType]	proc preferredContentType(request: HttpRequestRef; types: varargs[MediaType]): Result[\n    MediaType, cstring]		801
+nim	init	httpserver.html#init,HttpConnection,HttpServerRef,StreamTransport	proc init(value: var HttpConnection; server: HttpServerRef; transp: StreamTransport)		921
+nim	gracefulCloseWait	httpserver.html#gracefulCloseWait,HttpConnectionRef	proc gracefulCloseWait(conn: HttpConnectionRef): InternalRaisesFuture[void, void]		955
+nim	closeWait	httpserver.html#closeWait,HttpConnectionRef	proc closeWait(conn: HttpConnectionRef): InternalRaisesFuture[void, void]		965
+nim	closeWait	httpserver.html#closeWait,HttpRequestRef	proc closeWait(req: HttpRequestRef): InternalRaisesFuture[void, void]		968
+nim	keepalive=	httpserver.html#keepalive=,HttpResponseRef,bool	proc keepalive=(resp: HttpResponseRef; value: bool)		985
+nim	keepalive	httpserver.html#keepalive,HttpResponseRef	proc keepalive(resp: HttpResponseRef): bool		992
+nim	remote	httpserver.html#remote,HttpRequestRef	proc remote(request: HttpRequestRef): Opt[TransportAddress]		1017
+nim	local	httpserver.html#local,HttpRequestRef	proc local(request: HttpRequestRef): Opt[TransportAddress]		1021
+nim	getRequestFence	httpserver.html#getRequestFence,HttpServerRef,HttpConnectionRef	proc getRequestFence(server: HttpServerRef; connection: HttpConnectionRef): InternalRaisesFuture[\n    RequestFence, void]		1027
+nim	getConnectionFence	httpserver.html#getConnectionFence,HttpServerRef,StreamTransport	proc getConnectionFence(server: HttpServerRef; transp: StreamTransport): InternalRaisesFuture[\n    ConnectionFence, void]		1054
+nim	state	httpserver.html#state,HttpServerRef	proc state(server: HttpServerRef): HttpServerState		1176
+nim	start	httpserver.html#start,HttpServerRef	proc start(server: HttpServerRef)		1189
+nim	stop	httpserver.html#stop,HttpServerRef	proc stop(server: HttpServerRef): InternalRaisesFuture[void, void]		1194
+nim	drop	httpserver.html#drop,HttpServerRef	proc drop(server: HttpServerRef): InternalRaisesFuture[void, void]		1199
+nim	closeWait	httpserver.html#closeWait,HttpServerRef	proc closeWait(server: HttpServerRef): InternalRaisesFuture[void, void]		1209
+nim	join	httpserver.html#join,HttpServerRef	proc join(server: HttpServerRef): InternalRaisesFuture[void, (CancelledError,)]		1218
+nim	getMultipartReader	httpserver.html#getMultipartReader,HttpRequestRef	proc getMultipartReader(req: HttpRequestRef): HttpResult[MultiPartReaderRef]		1222
+nim	post	httpserver.html#post,HttpRequestRef	proc post(req: HttpRequestRef): InternalRaisesFuture[HttpTable,\n    (CancelledError, HttpTransportError, HttpProtocolError)]		1238
+nim	setHeader	httpserver.html#setHeader,HttpResponseRef,string,string	proc setHeader(resp: HttpResponseRef; key, value: string)		1336
+nim	setHeaderDefault	httpserver.html#setHeaderDefault,HttpResponseRef,string,string	proc setHeaderDefault(resp: HttpResponseRef; key, value: string)		1341
+nim	addHeader	httpserver.html#addHeader,HttpResponseRef,string,string	proc addHeader(resp: HttpResponseRef; key, value: string)		1347
+nim	getHeader	httpserver.html#getHeader,HttpResponseRef,string,string	proc getHeader(resp: HttpResponseRef; key: string; default: string = ""): string		1352
+nim	hasHeader	httpserver.html#hasHeader,HttpResponseRef,string	proc hasHeader(resp: HttpResponseRef; key: string): bool		1358
+nim	sendBody	httpserver.html#sendBody,HttpResponseRef,pointer,int	proc sendBody(resp: HttpResponseRef; pbytes: pointer; nbytes: int): InternalRaisesFuture[\n    void, (CancelledError, HttpWriteError)]		1425
+nim	sendBody	httpserver.html#sendBody,HttpResponseRef,ByteChar	proc sendBody(resp: HttpResponseRef; data: ByteChar): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		1446
+nim	sendError	httpserver.html#sendError,HttpResponseRef,HttpCode,string	proc sendError(resp: HttpResponseRef; code: HttpCode; body = ""): InternalRaisesFuture[\n    void, (CancelledError, HttpWriteError)]		1452
+nim	prepare	httpserver.html#prepare,HttpResponseRef	proc prepare(resp: HttpResponseRef; streamType = HttpResponseStreamType.Chunked): InternalRaisesFuture[\n    void, (CancelledError, HttpWriteError)]		1474
+nim	prepareChunked	httpserver.html#prepareChunked,HttpResponseRef	proc prepareChunked(resp: HttpResponseRef): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		1506
+nim	preparePlain	httpserver.html#preparePlain,HttpResponseRef	proc preparePlain(resp: HttpResponseRef): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		1513
+nim	prepareSSE	httpserver.html#prepareSSE,HttpResponseRef	proc prepareSSE(resp: HttpResponseRef): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		1520
+nim	send	httpserver.html#send,HttpResponseRef,pointer,int	proc send(resp: HttpResponseRef; pbytes: pointer; nbytes: int): InternalRaisesFuture[\n    void, (CancelledError, HttpWriteError)]		1525
+nim	send	httpserver.html#send,HttpResponseRef,ByteChar	proc send(resp: HttpResponseRef; data: ByteChar): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		1541
+nim	sendChunk	httpserver.html#sendChunk,HttpResponseRef,pointer,int	proc sendChunk(resp: HttpResponseRef; pbytes: pointer; nbytes: int): InternalRaisesFuture[\n    void, (CancelledError, HttpWriteError)]		1557
+nim	sendChunk	httpserver.html#sendChunk,HttpResponseRef,ByteChar	proc sendChunk(resp: HttpResponseRef; data: ByteChar): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		1561
+nim	sendEvent	httpserver.html#sendEvent,HttpResponseRef,string,string	proc sendEvent(resp: HttpResponseRef; eventName: string; data: string): InternalRaisesFuture[\n    void, (CancelledError, HttpWriteError)]		1566
+nim	finish	httpserver.html#finish,HttpResponseRef	proc finish(resp: HttpResponseRef): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		1580
+nim	respond	httpserver.html#respond,HttpRequestRef,HttpCode,ByteChar,HttpTable	proc respond(req: HttpRequestRef; code: HttpCode; content: ByteChar;\n        headers: HttpTable): InternalRaisesFuture[HttpResponseRef,\n    (CancelledError, HttpWriteError)]		1597
+nim	respond	httpserver.html#respond,HttpRequestRef,HttpCode,ByteChar	proc respond(req: HttpRequestRef; code: HttpCode; content: ByteChar): InternalRaisesFuture[\n    HttpResponseRef, (CancelledError, HttpWriteError)]		1610
+nim	respond	httpserver.html#respond,HttpRequestRef,HttpCode	proc respond(req: HttpRequestRef; code: HttpCode): InternalRaisesFuture[\n    HttpResponseRef, (CancelledError, HttpWriteError)]		1615
+nim	redirect	httpserver.html#redirect,HttpRequestRef,HttpCode,string,HttpTable	proc redirect(req: HttpRequestRef; code: HttpCode; location: string;\n         headers: HttpTable): InternalRaisesFuture[HttpResponseRef,\n    (CancelledError, HttpWriteError)]		1621
+nim	redirect	httpserver.html#redirect,HttpRequestRef,HttpCode,Uri,HttpTable	proc redirect(req: HttpRequestRef; code: HttpCode; location: Uri; headers: HttpTable): InternalRaisesFuture[\n    HttpResponseRef, (CancelledError, HttpWriteError)]		1633
+nim	redirect	httpserver.html#redirect,HttpRequestRef,HttpCode,Uri	proc redirect(req: HttpRequestRef; code: HttpCode; location: Uri): InternalRaisesFuture[\n    HttpResponseRef, (CancelledError, HttpWriteError)]		1643
+nim	redirect	httpserver.html#redirect,HttpRequestRef,HttpCode,string	proc redirect(req: HttpRequestRef; code: HttpCode; location: string): InternalRaisesFuture[\n    HttpResponseRef, (CancelledError, HttpWriteError)]		1649
+nim	responded	httpserver.html#responded,HttpRequestRef	proc responded(req: HttpRequestRef): bool		1653
+nim	remoteAddress	httpserver.html#remoteAddress,HttpConnectionRef	proc remoteAddress(conn: HttpConnectionRef): TransportAddress		1663
+nim	remoteAddress	httpserver.html#remoteAddress,HttpRequestRef	proc remoteAddress(request: HttpRequestRef): TransportAddress		1671
+nim	requestInfo	httpserver.html#requestInfo,HttpRequestRef,string	proc requestInfo(req: HttpRequestRef; contentType = "text/plain"): string		1676
+nimgrp	remoteaddress	httpserver.html#remoteAddress-procs-all	proc		1663
+nimgrp	sendbody	httpserver.html#sendBody-procs-all	proc		1424
+nimgrp	preferredcontenttype	httpserver.html#preferredContentType-procs-all	proc		715
+nimgrp	respond	httpserver.html#respond-procs-all	proc		1595
+nimgrp	defaultresponse	httpserver.html#defaultResponse-procs-all	proc		197
+nimgrp	updaterequest	httpserver.html#updateRequest-procs-all	proc		440
+nimgrp	preferredcontentmediatype	httpserver.html#preferredContentMediaType-procs-all	proc		701
+nimgrp	redirect	httpserver.html#redirect-procs-all	proc		1619
+nimgrp	closewait	httpserver.html#closeWait-procs-all	proc		964
+nimgrp	new	httpserver.html#new-procs-all	proc		245
+nimgrp	send	httpserver.html#send-procs-all	proc		1524
+nimgrp	sendchunk	httpserver.html#sendChunk-procs-all	proc		1555

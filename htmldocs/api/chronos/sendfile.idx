@@ -1,0 +1,2 @@
+nimTitle	sendfile	chronos/sendfile.html	module chronos/sendfile		0
+nim	sendfile	chronos/sendfile.html#sendfile,int,int,int,int	proc sendfile(outfd, infd: int; offset: int; count: var int): int		15

@@ -1,0 +1,80 @@
+nimTitle	httpclient	httpclient.html	module chronos/apps/http/httpclient		0
+nim	HttpMaxHeadersSize	httpclient.html#HttpMaxHeadersSize	const HttpMaxHeadersSize		23
+nim	HttpConnectTimeout	httpclient.html#HttpConnectTimeout	const HttpConnectTimeout		25
+nim	HttpHeadersTimeout	httpclient.html#HttpHeadersTimeout	const HttpHeadersTimeout		27
+nim	HttpConnectionIdleTimeout	httpclient.html#HttpConnectionIdleTimeout	const HttpConnectionIdleTimeout		29
+nim	HttpConnectionCheckPeriod	httpclient.html#HttpConnectionCheckPeriod	const HttpConnectionCheckPeriod		34
+nim	HttpMaxRedirections	httpclient.html#HttpMaxRedirections	const HttpMaxRedirections		37
+nim	HttpClientConnectionTrackerName	httpclient.html#HttpClientConnectionTrackerName	const HttpClientConnectionTrackerName		39
+nim	HttpClientRequestTrackerName	httpclient.html#HttpClientRequestTrackerName	const HttpClientRequestTrackerName		41
+nim	HttpClientResponseTrackerName	httpclient.html#HttpClientResponseTrackerName	const HttpClientResponseTrackerName		43
+nim	HttpClientConnectionState	httpclient.html#HttpClientConnectionState	enum HttpClientConnectionState		47
+nim	HttpClientScheme	httpclient.html#HttpClientScheme	enum HttpClientScheme		63
+nim	HttpReqRespState	httpclient.html#HttpReqRespState	enum HttpReqRespState		67
+nim	HttpClientBodyFlag	httpclient.html#HttpClientBodyFlag	enum HttpClientBodyFlag		75
+nim	HttpClientRequestFlag	httpclient.html#HttpClientRequestFlag	enum HttpClientRequestFlag		82
+nim	HttpClientConnectionFlag	httpclient.html#HttpClientConnectionFlag	enum HttpClientConnectionFlag		86
+nim	HttpHeaderTuple	httpclient.html#HttpHeaderTuple	tuple HttpHeaderTuple		92
+nim	HttpResponseTuple	httpclient.html#HttpResponseTuple	tuple HttpResponseTuple		96
+nim	HttpClientConnection	httpclient.html#HttpClientConnection	object HttpClientConnection		100
+nim	HttpClientConnectionRef	httpclient.html#HttpClientConnectionRef	type HttpClientConnectionRef		119
+nim	HttpConnectionProvider	httpclient.html#HttpConnectionProvider	type HttpConnectionProvider		121
+nim	HttpSessionRef	httpclient.html#HttpSessionRef	type HttpSessionRef		127
+nim	HttpAddress	httpclient.html#HttpAddress	object HttpAddress		144
+nim	HttpClientRequest	httpclient.html#HttpClientRequest	object HttpClientRequest		158
+nim	HttpClientRequestRef	httpclient.html#HttpClientRequestRef	type HttpClientRequestRef		176
+nim	HttpClientResponse	httpclient.html#HttpClientResponse	object HttpClientResponse		178
+nim	HttpClientResponseRef	httpclient.html#HttpClientResponseRef	type HttpClientResponseRef		200
+nim	HttpClientFlag	httpclient.html#HttpClientFlag	enum HttpClientFlag		202
+nim	HttpClientFlags	httpclient.html#HttpClientFlags	type HttpClientFlags		211
+nim	ServerSentEvent	httpclient.html#ServerSentEvent	object ServerSentEvent		213
+nim	HttpAddressResult	httpclient.html#HttpAddressResult	type HttpAddressResult		217
+nim	directProvider	httpclient.html#directProvider	proc directProvider(): HttpConnectionProvider		272
+nim	new	httpclient.html#new,typedesc[HttpSessionRef],HttpClientFlags,int,set[SocketFlags],HttpConnectionProvider	proc new(t: typedesc[HttpSessionRef]; flags: HttpClientFlags = {};\n    maxRedirections = HttpMaxRedirections; connectTimeout = HttpConnectTimeout;\n    headersTimeout = HttpHeadersTimeout;\n    connectionBufferSize = DefaultStreamBufferSize; maxConnections = -1;\n    idleTimeout = HttpConnectionIdleTimeout;\n    idlePeriod = HttpConnectionCheckPeriod; socketFlags: set[SocketFlags] = {};\n    dualstack = DualStackType.Auto; provider: HttpConnectionProvider = nil): HttpSessionRef		274
+nim	getHttpAddress	httpclient.html#getHttpAddress,Uri	proc getHttpAddress(url: Uri): HttpAddressResult		352
+nim	getHttpAddress	httpclient.html#getHttpAddress,Uri,HttpClientFlags	proc getHttpAddress(uri: Uri; flags: HttpClientFlags): HttpAddressResult		389
+nim	getHttpAddress	httpclient.html#getHttpAddress,string	proc getHttpAddress(url: string): HttpAddressResult		396
+nim	getHttpAddress	httpclient.html#getHttpAddress,string,HttpClientFlags	proc getHttpAddress(url: string; flags: HttpClientFlags): HttpAddressResult		402
+nim	getHttpAddress	httpclient.html#getHttpAddress,HttpSessionRef,Uri	proc getHttpAddress(session: HttpSessionRef; url: Uri): HttpAddressResult		408
+nim	getHttpAddress	httpclient.html#getHttpAddress,HttpSessionRef,string	proc getHttpAddress(session: HttpSessionRef; url: string): HttpAddressResult		414
+nim	getAddress	httpclient.html#getAddress,HttpSessionRef,Uri	proc getAddress(session: HttpSessionRef; url: Uri): HttpResult[HttpAddress]		423
+nim	getAddress	httpclient.html#getAddress,HttpSessionRef,string	proc getAddress(session: HttpSessionRef; url: string): HttpResult[HttpAddress]		428
+nim	getAddress	httpclient.html#getAddress,TransportAddress,HttpClientScheme,string	proc getAddress(address: TransportAddress;\n           ctype: HttpClientScheme = HttpClientScheme.NonSecure;\n           queryString: string = "/"): HttpAddress		435
+nim	getUri	httpclient.html#getUri,HttpAddress	proc getUri(address: HttpAddress): Uri		446
+nim	redirect	httpclient.html#redirect,Uri,Uri	proc redirect(srcuri, dsturi: Uri): Uri		461
+nim	redirect	httpclient.html#redirect,HttpSessionRef,HttpAddress,Uri	proc redirect(session: HttpSessionRef; srcaddr: HttpAddress; uri: Uri): HttpResult[\n    HttpAddress]		473
+nim	closeWait	httpclient.html#closeWait,HttpSessionRef	proc closeWait(session: HttpSessionRef): InternalRaisesFuture[void, void]		828
+nim	closeWait	httpclient.html#closeWait,HttpClientRequestRef	proc closeWait(request: HttpClientRequestRef): InternalRaisesFuture[void, void]		884
+nim	closeWait	httpclient.html#closeWait,HttpClientResponseRef	proc closeWait(response: HttpClientResponseRef): InternalRaisesFuture[void, void]		900
+nim	new	httpclient.html#new,typedesc[HttpClientRequestRef],HttpSessionRef,HttpAddress,HttpMethod,HttpVersion,set[HttpClientRequestFlag],int,openArray[HttpHeaderTuple],openArray[byte]	proc new(t: typedesc[HttpClientRequestRef]; session: HttpSessionRef; ha: HttpAddress;\n    meth: HttpMethod = MethodGet; version: HttpVersion = HttpVersion11;\n    flags: set[HttpClientRequestFlag] = {};\n    maxResponseHeadersSize: int = HttpMaxHeadersSize;\n    headers: openArray[HttpHeaderTuple] = []; body: openArray[byte] = []): HttpClientRequestRef		1064
+nim	new	httpclient.html#new,typedesc[HttpClientRequestRef],HttpSessionRef,string,HttpMethod,HttpVersion,set[HttpClientRequestFlag],int,openArray[HttpHeaderTuple],openArray[byte]	proc new(t: typedesc[HttpClientRequestRef]; session: HttpSessionRef; url: string;\n    meth: HttpMethod = MethodGet; version: HttpVersion = HttpVersion11;\n    flags: set[HttpClientRequestFlag] = {};\n    maxResponseHeadersSize: int = HttpMaxHeadersSize;\n    headers: openArray[HttpHeaderTuple] = []; body: openArray[byte] = []): HttpResult[\n    HttpClientRequestRef]		1085
+nim	new	httpclient.html#new,typedesc[HttpClientRequestRef],HttpSessionRef,HttpAddress,HttpMethod,HttpVersion,set[HttpClientRequestFlag],int,openArray[HttpHeaderTuple],sinkseq[byte]	proc new(t: typedesc[HttpClientRequestRef]; session: HttpSessionRef; ha: HttpAddress;\n    meth: HttpMethod = MethodGet; version: HttpVersion = HttpVersion11;\n    flags: set[HttpClientRequestFlag] = {};\n    maxResponseHeadersSize: int = HttpMaxHeadersSize;\n    headers: openArray[HttpHeaderTuple] = []; body: sink seq[byte]): HttpClientRequestRef		1101
+nim	new	httpclient.html#new,typedesc[HttpClientRequestRef],HttpSessionRef,string,HttpMethod,HttpVersion,set[HttpClientRequestFlag],int,openArray[HttpHeaderTuple],sinkseq[byte]	proc new(t: typedesc[HttpClientRequestRef]; session: HttpSessionRef; url: string;\n    meth: HttpMethod = MethodGet; version: HttpVersion = HttpVersion11;\n    flags: set[HttpClientRequestFlag] = {};\n    maxResponseHeadersSize: int = HttpMaxHeadersSize;\n    headers: openArray[HttpHeaderTuple] = []; body: sink seq[byte]): HttpResult[\n    HttpClientRequestRef]		1119
+nim	get	httpclient.html#get.t,typedesc[HttpClientRequestRef],HttpSessionRef,,HttpVersion,set[HttpClientRequestFlag],int,openArray[HttpHeaderTuple]	template get(t: typedesc[HttpClientRequestRef]; session: HttpSessionRef;\n    address: HttpAddress | string; version: HttpVersion = HttpVersion11;\n    flags: set[HttpClientRequestFlag] = {};\n    maxResponseHeadersSize: int = HttpMaxHeadersSize;\n    headers: openArray[HttpHeaderTuple] = []): auto		1134
+nim	post	httpclient.html#post.t,typedesc[HttpClientRequestRef],HttpSessionRef,,HttpVersion,set[HttpClientRequestFlag],int,openArray[HttpHeaderTuple],	template post(t: typedesc[HttpClientRequestRef]; session: HttpSessionRef;\n     address: HttpAddress | string; version: HttpVersion = HttpVersion11;\n     flags: set[HttpClientRequestFlag] = {};\n     maxResponseHeadersSize: int = HttpMaxHeadersSize;\n     headers: openArray[HttpHeaderTuple] = []; body: openArray[byte] | seq[byte]): auto		1145
+nim	post	httpclient.html#post,typedesc[HttpClientRequestRef],HttpSessionRef,,HttpVersion,set[HttpClientRequestFlag],int,openArray[HttpHeaderTuple],openArray[char]	proc post(t: typedesc[HttpClientRequestRef]; session: HttpSessionRef;\n     address: HttpAddress | string; version: HttpVersion = HttpVersion11;\n     flags: set[HttpClientRequestFlag] = {};\n     maxResponseHeadersSize: int = HttpMaxHeadersSize;\n     headers: openArray[HttpHeaderTuple] = []; body: openArray[char] = []): auto		1153
+nim	open	httpclient.html#open,HttpClientRequestRef	proc open(request: HttpClientRequestRef): InternalRaisesFuture[HttpBodyWriter,\n    (CancelledError, HttpError)]		1296
+nim	finish	httpclient.html#finish,HttpClientRequestRef	proc finish(request: HttpClientRequestRef): InternalRaisesFuture[\n    HttpClientResponseRef, (CancelledError, HttpError)]		1335
+nim	send	httpclient.html#send,HttpClientRequestRef	proc send(request: HttpClientRequestRef): InternalRaisesFuture[HttpClientResponseRef,\n    (CancelledError, HttpError)]		1354
+nim	getNewLocation	httpclient.html#getNewLocation,HttpClientResponseRef	proc getNewLocation(resp: HttpClientResponseRef): HttpResult[HttpAddress]		1375
+nim	getBodyReader	httpclient.html#getBodyReader,HttpClientResponseRef	proc getBodyReader(response: HttpClientResponseRef): HttpBodyReader		1386
+nim	finish	httpclient.html#finish,HttpClientResponseRef	proc finish(response: HttpClientResponseRef): InternalRaisesFuture[void,\n    (HttpUseClosedError,)]		1427
+nim	getBodyBytes	httpclient.html#getBodyBytes,HttpClientResponseRef	proc getBodyBytes(response: HttpClientResponseRef): InternalRaisesFuture[seq[byte],\n    (CancelledError, HttpError)]		1446
+nim	getBodyBytes	httpclient.html#getBodyBytes,HttpClientResponseRef,int	proc getBodyBytes(response: HttpClientResponseRef; nbytes: int): InternalRaisesFuture[\n    seq[byte], (CancelledError, HttpError)]		1471
+nim	consumeBody	httpclient.html#consumeBody,HttpClientResponseRef	proc consumeBody(response: HttpClientResponseRef): InternalRaisesFuture[int,\n    (CancelledError, HttpError)]		1496
+nim	tunnel	httpclient.html#tunnel,HttpClientResponseRef	proc tunnel(response: HttpClientResponseRef): InternalRaisesFuture[AsyncStream,\n    (CancelledError, HttpError)]		1521
+nim	redirect	httpclient.html#redirect,HttpClientRequestRef,HttpAddress	proc redirect(request: HttpClientRequestRef; ha: HttpAddress): HttpResult[\n    HttpClientRequestRef]		1607
+nim	redirect	httpclient.html#redirect,HttpClientRequestRef,Uri	proc redirect(request: HttpClientRequestRef; uri: Uri): HttpResult[\n    HttpClientRequestRef]		1630
+nim	fetch	httpclient.html#fetch,HttpClientRequestRef	proc fetch(request: HttpClientRequestRef): InternalRaisesFuture[HttpResponseTuple,\n    (CancelledError, HttpError)]		1658
+nim	fetch	httpclient.html#fetch,HttpSessionRef,Uri	proc fetch(session: HttpSessionRef; url: Uri): InternalRaisesFuture[\n    HttpResponseTuple, (CancelledError, HttpError)]		1677
+nim	getServerSentEvents	httpclient.html#getServerSentEvents,HttpClientResponseRef,int	proc getServerSentEvents(response: HttpClientResponseRef; maxEventSize: int = -1): InternalRaisesFuture[\n    seq[ServerSentEvent], (CancelledError, HttpError)]		1744
+nim	httpProxyProvider	httpclient.html#httpProxyProvider,HttpAddress	proc httpProxyProvider(proxy: HttpAddress): HttpConnectionProvider		1852
+nim	httpConnectProvider	httpclient.html#httpConnectProvider,HttpAddress	proc httpConnectProvider(proxy: HttpAddress): HttpConnectionProvider		1876
+nimgrp	fetch	httpclient.html#fetch-procs-all	proc		1657
+nimgrp	gethttpaddress	httpclient.html#getHttpAddress-procs-all	proc		352
+nimgrp	getbodybytes	httpclient.html#getBodyBytes-procs-all	proc		1445
+nimgrp	finish	httpclient.html#finish-procs-all	proc		1334
+nimgrp	getaddress	httpclient.html#getAddress-procs-all	proc		423
+nimgrp	redirect	httpclient.html#redirect-procs-all	proc		461
+nimgrp	closewait	httpclient.html#closeWait-procs-all	proc		828
+nimgrp	new	httpclient.html#new-procs-all	proc		274

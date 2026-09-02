@@ -1,0 +1,29 @@
+nimTitle	httptable	httptable.html	module chronos/apps/http/httptable		0
+nim	HttpTable	httptable.html#HttpTable	object HttpTable		16
+nim	HttpTableRef	httptable.html#HttpTableRef	type HttpTableRef		19
+nim	HttpTables	httptable.html#HttpTables	type HttpTables		21
+nim	add	httptable.html#add,HttpTables,string,string	proc add(ht: var HttpTables; key: string; value: string)		23
+nim	add	httptable.html#add,HttpTables,string,SomeInteger	proc add(ht: var HttpTables; key: string; value: SomeInteger)		28
+nim	set	httptable.html#set,HttpTables,string,string	proc set(ht: var HttpTables; key: string; value: string)		32
+nim	hasKeyOrPut	httptable.html#hasKeyOrPut,HttpTables,string,string	proc hasKeyOrPut(ht: var HttpTables; key: string; value: string): bool		37
+nim	contains	httptable.html#contains,HttpTables,string	proc contains(ht: HttpTables; key: string): bool		42
+nim	getList	httptable.html#getList,HttpTables,string,openArray[string]	proc getList(ht: HttpTables; key: string; default: openArray[string] = []): seq[\n    string]		46
+nim	getString	httptable.html#getString,HttpTables,string,string	proc getString(ht: HttpTables; key: string; default: string = ""): string		52
+nim	count	httptable.html#count,HttpTables,string	proc count(ht: HttpTables; key: string): int		64
+nim	getInt	httptable.html#getInt,HttpTables,string	proc getInt(ht: HttpTables; key: string): uint64		68
+nim	getLastString	httptable.html#getLastString,HttpTables,string	proc getLastString(ht: HttpTables; key: string): string		84
+nim	getLastInt	httptable.html#getLastInt,HttpTables,string	proc getLastInt(ht: HttpTables; key: string): uint64		96
+nim	init	httptable.html#init,typedesc[HttpTable]	proc init(htt: typedesc[HttpTable]): HttpTable		109
+nim	new	httptable.html#new,typedesc[HttpTableRef]	proc new(htt: typedesc[HttpTableRef]): HttpTableRef		113
+nim	init	httptable.html#init,typedesc[HttpTable],openArray[tuple[string,string]]	proc init(htt: typedesc[HttpTable];\n     data: openArray[tuple[key: string, value: string]]): HttpTable		117
+nim	new	httptable.html#new,typedesc[HttpTableRef],openArray[tuple[string,string]]	proc new(htt: typedesc[HttpTableRef];\n    data: openArray[tuple[key: string, value: string]]): HttpTableRef		125
+nim	isEmpty	httptable.html#isEmpty,HttpTables	proc isEmpty(ht: HttpTables): bool		133
+nim	normalizeHeaderName	httptable.html#normalizeHeaderName,string	proc normalizeHeaderName(value: string): string		137
+nim	stringItems	httptable.html#stringItems.i,HttpTables	iterator stringItems(ht: HttpTables; normKey = false): tuple[key: string, value: string]		160
+nim	items	httptable.html#items.i,HttpTables	iterator items(ht: HttpTables; normKey = false): tuple[key: string, value: seq[string]]		171
+nim	`$`	httptable.html#$,HttpTables	proc `$`(ht: HttpTables): string		181
+nim	toList	httptable.html#toList,HttpTables	proc toList(ht: HttpTables; normKey = false): auto		192
+nim	clear	httptable.html#clear,HttpTables	proc clear(ht: var HttpTables)		199
+nimgrp	init	httptable.html#init-procs-all	proc		109
+nimgrp	new	httptable.html#new-procs-all	proc		113
+nimgrp	add	httptable.html#add-procs-all	proc		23

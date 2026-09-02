@@ -1,0 +1,9 @@
+nimTitle	threadsync	threadsync.html	module chronos/threadsync		0
+nim	ThreadSignal	threadsync.html#ThreadSignal	object ThreadSignal		28
+nim	ThreadSignalPtr	threadsync.html#ThreadSignalPtr	type ThreadSignalPtr		36
+nim	new	threadsync.html#new,typedesc[ThreadSignalPtr]	proc new(t: typedesc[ThreadSignalPtr]): Result[ThreadSignalPtr, string]		38
+nim	close	threadsync.html#close,ThreadSignalPtr	proc close(signal: ThreadSignalPtr): Result[void, string]		148
+nim	fireSync	threadsync.html#fireSync,ThreadSignalPtr	proc fireSync(signal: ThreadSignalPtr; timeout = InfiniteDuration): Result[bool,\n    string]		166
+nim	waitSync	threadsync.html#waitSync,ThreadSignalPtr	proc waitSync(signal: ThreadSignalPtr; timeout = InfiniteDuration): Result[bool,\n    string]		217
+nim	fire	threadsync.html#fire,ThreadSignalPtr	proc fire(signal: ThreadSignalPtr): InternalRaisesFuture[void,\n    (AsyncError, CancelledError)]		279
+nim	wait	threadsync.html#wait,ThreadSignalPtr	proc wait(signal: ThreadSignalPtr): InternalRaisesFuture[void,\n    (AsyncError, CancelledError)]		371

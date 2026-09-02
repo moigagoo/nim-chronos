@@ -1,0 +1,11 @@
+nimTitle	httpdebug	httpdebug.html	module chronos/apps/http/httpdebug		0
+nim	ConnectionType	httpdebug.html#ConnectionType	enum ConnectionType		23
+nim	ConnectionState	httpdebug.html#ConnectionState	enum ConnectionState		26
+nim	ServerConnectionInfo	httpdebug.html#ServerConnectionInfo	object ServerConnectionInfo		29
+nim	ServerInfo	httpdebug.html#ServerInfo	object ServerInfo		39
+nim	getConnectionType	httpdebug.html#getConnectionType	proc getConnectionType(server: HttpServerRef | SecureHttpServerRef): ConnectionType		54
+nim	getServerInfo	httpdebug.html#getServerInfo	proc getServerInfo(server: HttpServerRef | SecureHttpServerRef): ServerInfo		64
+nim	getConnectionState	httpdebug.html#getConnectionState,HttpConnectionHolderRef	proc getConnectionState(holder: HttpConnectionHolderRef): ConnectionState		81
+nim	getQueryString	httpdebug.html#getQueryString,HttpConnectionHolderRef	proc getQueryString(holder: HttpConnectionHolderRef): Opt[string]		90
+nim	init	httpdebug.html#init,typedesc[ServerConnectionInfo],HttpConnectionHolderRef	proc init(t: typedesc[ServerConnectionInfo]; holder: HttpConnectionHolderRef): ServerConnectionInfo		96
+nim	getConnections	httpdebug.html#getConnections,HttpServerRef	proc getConnections(server: HttpServerRef): seq[ServerConnectionInfo]		126

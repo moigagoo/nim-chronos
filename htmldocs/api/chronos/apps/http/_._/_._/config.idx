@@ -1,0 +1,19 @@
+nimTitle	config	_._/_._/config.html	module chronos/config		0
+nim	chronosHandleException	_._/_._/config.html#chronosHandleException	const chronosHandleException		23
+nim	chronosStrictFutureAccess	_._/_._/config.html#chronosStrictFutureAccess	const chronosStrictFutureAccess		37
+nim	chronosStackTrace	_._/_._/config.html#chronosStackTrace	const chronosStackTrace		39
+nim	chronosFutureId	_._/_._/config.html#chronosFutureId	const chronosFutureId		42
+nim	chronosFutureTracking	_._/_._/config.html#chronosFutureTracking	const chronosFutureTracking		46
+nim	chronosDumpAsync	_._/_._/config.html#chronosDumpAsync	const chronosDumpAsync		50
+nim	chronosProcShell	_._/_._/config.html#chronosProcShell	const chronosProcShell		53
+nim	chronosEventsCount	_._/_._/config.html#chronosEventsCount	const chronosEventsCount		67
+nim	chronosInitialSize	_._/_._/config.html#chronosInitialSize	const chronosInitialSize		70
+nim	chronosEventEngine	_._/_._/config.html#chronosEventEngine	const chronosEventEngine		73
+nim	chronosHasRaises	_._/_._/config.html#chronosHasRaises	const chronosHasRaises		92
+nim	chronosTransportDefaultBufferSize	_._/_._/config.html#chronosTransportDefaultBufferSize	const chronosTransportDefaultBufferSize		95
+nim	chronosStreamDefaultBufferSize	_._/_._/config.html#chronosStreamDefaultBufferSize	const chronosStreamDefaultBufferSize		98
+nim	chronosTLSSessionCacheBufferSize	_._/_._/config.html#chronosTLSSessionCacheBufferSize	const chronosTLSSessionCacheBufferSize		101
+nim	chronosUseSink	_._/_._/config.html#chronosUseSink	const chronosUseSink		104
+nim	chronosStrictReentrancy	_._/_._/config.html#chronosStrictReentrancy	const chronosStrictReentrancy		113
+nim	chronosSink	_._/_._/config.html#chronosSink.t,type	template chronosSink(T: type): type		151
+nim	chronosMoveSink	_._/_._/config.html#chronosMoveSink.t,sinkauto	template chronosMoveSink(v: sink auto): untyped		152

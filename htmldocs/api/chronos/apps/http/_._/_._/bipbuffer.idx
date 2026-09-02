@@ -1,0 +1,13 @@
+nimTitle	bipbuffer	_._/_._/bipbuffer.html	module chronos/bipbuffer		0
+nim	BipBuffer	_._/_._/bipbuffer.html#BipBuffer	object BipBuffer		35
+nim	init	_._/_._/bipbuffer.html#init,typedesc[BipBuffer],int	proc init(t: typedesc[BipBuffer]; size: int): BipBuffer		39
+nim	availSpace	_._/_._/bipbuffer.html#availSpace,BipBuffer	proc availSpace(bp: BipBuffer): Natural		62
+nim	len	_._/_._/bipbuffer.html#len,BipBuffer	proc len(bp: BipBuffer): Natural		67
+nim	reserve	_._/_._/bipbuffer.html#reserve,BipBuffer,Natural	proc reserve(bp: var BipBuffer; size: Natural = 0): tuple[data: ptr byte,\n    size: Natural]		71
+nim	commit	_._/_._/bipbuffer.html#commit,BipBuffer,Natural	proc commit(bp: var BipBuffer; size: Natural)		97
+nim	consume	_._/_._/bipbuffer.html#consume,BipBuffer,Natural	proc consume(bp: var BipBuffer; size: Natural)		115
+nim	items	_._/_._/bipbuffer.html#items.i,BipBuffer	iterator items(bp: BipBuffer): byte		130
+nim	regions	_._/_._/bipbuffer.html#regions.i,BipBuffer	iterator regions(bp: var BipBuffer): tuple[data: ptr byte, size: Natural]		137
+nim	copyInto	_._/_._/bipbuffer.html#copyInto,BipBuffer,openArray[byte]	proc copyInto(bp: var BipBuffer; tgt: var openArray[byte]): Natural		144
+nim	copyUntil	_._/_._/bipbuffer.html#copyUntil,BipBuffer,openArray[T],int,openArray[T]	proc copyUntil[T: byte | char](bp: BipBuffer; tgt: var openArray[T]; state: var int;\n                          sep: openArray[T]): tuple[n: Natural, found: bool]		153
+nim	addLineInto	_._/_._/bipbuffer.html#addLineInto,BipBuffer,string,int,int,openArray[char]	proc addLineInto(bp: BipBuffer; tgt: var string; state: var int; limit: int;\n            sep: openArray[char]): tuple[n: Natural, done: bool]		183

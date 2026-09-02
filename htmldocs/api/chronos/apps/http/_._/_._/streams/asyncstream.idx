@@ -1,0 +1,110 @@
+nimTitle	asyncstream	_._/_._/streams/asyncstream.html	module chronos/streams/asyncstream		0
+nim	AsyncStreamDefaultBufferSize	_._/_._/streams/asyncstream.html#AsyncStreamDefaultBufferSize	const AsyncStreamDefaultBufferSize		19
+nim	AsyncStreamDefaultQueueSize	_._/_._/streams/asyncstream.html#AsyncStreamDefaultQueueSize	const AsyncStreamDefaultQueueSize		21
+nim	AsyncStreamReaderTrackerName	_._/_._/streams/asyncstream.html#AsyncStreamReaderTrackerName	const AsyncStreamReaderTrackerName		23
+nim	AsyncStreamWriterTrackerName	_._/_._/streams/asyncstream.html#AsyncStreamWriterTrackerName	const AsyncStreamWriterTrackerName		25
+nim	ReadOnceProc	_._/_._/streams/asyncstream.html#ReadOnceProc	type ReadOnceProc		66
+nim	AsyncStreamReaderVtbl	_._/_._/streams/asyncstream.html#AsyncStreamReaderVtbl	object AsyncStreamReaderVtbl		70
+nim	WriteProc	_._/_._/streams/asyncstream.html#WriteProc	type WriteProc		99
+nim	AsyncStreamWriterVtbl	_._/_._/streams/asyncstream.html#AsyncStreamWriterVtbl	object AsyncStreamWriterVtbl		102
+nim	AsyncStreamError	_._/_._/streams/asyncstream.html#AsyncStreamError	object AsyncStreamError		116
+nim	AsyncStreamIncorrectDefect	_._/_._/streams/asyncstream.html#AsyncStreamIncorrectDefect	object AsyncStreamIncorrectDefect		117
+nim	AsyncStreamIncompleteError	_._/_._/streams/asyncstream.html#AsyncStreamIncompleteError	object AsyncStreamIncompleteError		118
+nim	AsyncStreamLimitError	_._/_._/streams/asyncstream.html#AsyncStreamLimitError	object AsyncStreamLimitError		119
+nim	AsyncStreamUseClosedError	_._/_._/streams/asyncstream.html#AsyncStreamUseClosedError	object AsyncStreamUseClosedError		120
+nim	AsyncStreamReadError	_._/_._/streams/asyncstream.html#AsyncStreamReadError	object AsyncStreamReadError		121
+nim	AsyncStreamWriteError	_._/_._/streams/asyncstream.html#AsyncStreamWriteError	object AsyncStreamWriteError		122
+nim	AsyncStreamWriteEOFError	_._/_._/streams/asyncstream.html#AsyncStreamWriteEOFError	object AsyncStreamWriteEOFError		123
+nim	AsyncBuffer	_._/_._/streams/asyncstream.html#AsyncBuffer	object AsyncBuffer		125
+nim	AsyncBufferRef	_._/_._/streams/asyncstream.html#AsyncBufferRef	type AsyncBufferRef		129
+nim	Pointer	_._/_._/streams/asyncstream.html#Pointer	WriteType.Pointer		131
+nim	Sequence	_._/_._/streams/asyncstream.html#Sequence	WriteType.Sequence		131
+nim	String	_._/_._/streams/asyncstream.html#String	WriteType.String		131
+nim	WriteType	_._/_._/streams/asyncstream.html#WriteType	enum WriteType		131
+nim	WriteItem	_._/_._/streams/asyncstream.html#WriteItem	object WriteItem		134
+nim	AsyncStreamState	_._/_._/streams/asyncstream.html#AsyncStreamState	enum AsyncStreamState		146
+nim	StreamReaderLoop	_._/_._/streams/asyncstream.html#StreamReaderLoop	type StreamReaderLoop		154
+nim	StreamWriterLoop	_._/_._/streams/asyncstream.html#StreamWriterLoop	type StreamWriterLoop		157
+nim	AsyncStreamReader	_._/_._/streams/asyncstream.html#AsyncStreamReader	type AsyncStreamReader		161
+nim	AsyncStreamWriter	_._/_._/streams/asyncstream.html#AsyncStreamWriter	type AsyncStreamWriter		174
+nim	AsyncStream	_._/_._/streams/asyncstream.html#AsyncStream	object AsyncStream		187
+nim	AsyncStreamRW	_._/_._/streams/asyncstream.html#AsyncStreamRW	type AsyncStreamRW		191
+nim	new	_._/_._/streams/asyncstream.html#new,typedesc[AsyncBufferRef],int	proc new(t: typedesc[AsyncBufferRef]; size: int): AsyncBufferRef		193
+nim	wait	_._/_._/streams/asyncstream.html#wait.t,AsyncBufferRef	template wait(sb: AsyncBufferRef): untyped		199
+nim	transfer	_._/_._/streams/asyncstream.html#transfer.t,AsyncBufferRef	template transfer(sb: AsyncBufferRef): untyped		204
+nim	forget	_._/_._/streams/asyncstream.html#forget,AsyncBufferRef	proc forget(sb: AsyncBufferRef)		209
+nim	upload	_._/_._/streams/asyncstream.html#upload,AsyncBufferRef,ptr.byte,int	proc upload(sb: AsyncBufferRef; pbytes: ptr byte; nbytes: int): InternalRaisesFuture[\n    void, (CancelledError,)]		215
+nim	copyOut	_._/_._/streams/asyncstream.html#copyOut.t,pointer,WriteItem,int	template copyOut(dest: pointer; item: WriteItem; length: int)		239
+nim	newAsyncStreamIncompleteError	_._/_._/streams/asyncstream.html#newAsyncStreamIncompleteError	proc newAsyncStreamIncompleteError(): ref AsyncStreamIncompleteError		264
+nim	newAsyncStreamLimitError	_._/_._/streams/asyncstream.html#newAsyncStreamLimitError	proc newAsyncStreamLimitError(): ref AsyncStreamLimitError		268
+nim	newAsyncStreamUseClosedError	_._/_._/streams/asyncstream.html#newAsyncStreamUseClosedError	proc newAsyncStreamUseClosedError(): ref AsyncStreamUseClosedError		271
+nim	raiseAsyncStreamUseClosedError	_._/_._/streams/asyncstream.html#raiseAsyncStreamUseClosedError	proc raiseAsyncStreamUseClosedError()		275
+nim	raiseAsyncStreamLimitError	_._/_._/streams/asyncstream.html#raiseAsyncStreamLimitError	proc raiseAsyncStreamLimitError()		279
+nim	raiseAsyncStreamIncompleteError	_._/_._/streams/asyncstream.html#raiseAsyncStreamIncompleteError	proc raiseAsyncStreamIncompleteError()		283
+nim	newAsyncStreamWriteEOFError	_._/_._/streams/asyncstream.html#newAsyncStreamWriteEOFError	proc newAsyncStreamWriteEOFError(): ref AsyncStreamWriteEOFError		287
+nim	raiseAsyncStreamWriteEOFError	_._/_._/streams/asyncstream.html#raiseAsyncStreamWriteEOFError	proc raiseAsyncStreamWriteEOFError()		291
+nim	atEof	_._/_._/streams/asyncstream.html#atEof,AsyncStreamReader	proc atEof(rstream: AsyncStreamReader): bool		295
+nim	atEof	_._/_._/streams/asyncstream.html#atEof,AsyncStreamWriter	proc atEof(wstream: AsyncStreamWriter): bool		300
+nim	closed	_._/_._/streams/asyncstream.html#closed,AsyncStreamRW	proc closed(rw: AsyncStreamRW): bool		304
+nim	finished	_._/_._/streams/asyncstream.html#finished,AsyncStreamRW	proc finished(rw: AsyncStreamRW): bool		308
+nim	stopped	_._/_._/streams/asyncstream.html#stopped,AsyncStreamRW	proc stopped(rw: AsyncStreamRW): bool		312
+nim	running	_._/_._/streams/asyncstream.html#running,AsyncStreamRW	proc running(rw: AsyncStreamRW): bool		316
+nim	failed	_._/_._/streams/asyncstream.html#failed,AsyncStreamRW	proc failed(rw: AsyncStreamRW): bool		320
+nim	readExactly	_._/_._/streams/asyncstream.html#readExactly,AsyncStreamReader,pointer,int	proc readExactly(rstream: AsyncStreamReader; pbytes: pointer; nbytes: int): InternalRaisesFuture[\n    void, (CancelledError, AsyncStreamError)]		366
+nim	readOnce	_._/_._/streams/asyncstream.html#readOnce,AsyncStreamReader,pointer,int	proc readOnce(rstream: AsyncStreamReader; pbytes: pointer; nbytes: int): InternalRaisesFuture[\n    int, (CancelledError, AsyncStreamError)]		387
+nim	readUntil	_._/_._/streams/asyncstream.html#readUntil,AsyncStreamReader,pointer,int,seq[byte]	proc readUntil(rstream: AsyncStreamReader; pbytes: pointer; nbytes: int;\n          sep: seq[byte]): InternalRaisesFuture[int,\n    (CancelledError, AsyncStreamError)]		407
+nim	readLine	_._/_._/streams/asyncstream.html#readLine,AsyncStreamReader,int,string	proc readLine(rstream: AsyncStreamReader; limit = 0; sep = "\r\n"): InternalRaisesFuture[\n    string, (CancelledError, AsyncStreamError)]		436
+nim	read	_._/_._/streams/asyncstream.html#read,AsyncStreamReader,int	proc read(rstream: AsyncStreamReader; n: int): InternalRaisesFuture[seq[byte],\n    (CancelledError, AsyncStreamError)]		453
+nim	read	_._/_._/streams/asyncstream.html#read,AsyncStreamReader	proc read(rstream: AsyncStreamReader): InternalRaisesFuture[seq[byte],\n    (CancelledError, AsyncStreamError)]		463
+nim	consume	_._/_._/streams/asyncstream.html#consume,AsyncStreamReader,int	proc consume(rstream: AsyncStreamReader; n: int): InternalRaisesFuture[int,\n    (CancelledError, AsyncStreamError)]		470
+nim	consume	_._/_._/streams/asyncstream.html#consume,AsyncStreamReader	proc consume(rstream: AsyncStreamReader): InternalRaisesFuture[int,\n    (CancelledError, AsyncStreamError)]		480
+nim	readMessage	_._/_._/streams/asyncstream.html#readMessage,AsyncStreamReader,ReadMessagePredicate	proc readMessage(rstream: AsyncStreamReader; pred: ReadMessagePredicate): InternalRaisesFuture[\n    void, (CancelledError, AsyncStreamError)]		487
+nim	write	_._/_._/streams/asyncstream.html#write,AsyncStreamWriter,pointer,int	proc write(wstream: AsyncStreamWriter; pbytes: pointer; nbytes: int): InternalRaisesFuture[\n    void, (CancelledError, AsyncStreamError)]		507
+nim	write	_._/_._/streams/asyncstream.html#write,AsyncStreamWriter,seq[byte],int	proc write(wstream: AsyncStreamWriter; sbytes: seq[byte]; msglen = -1): InternalRaisesFuture[\n    void, (CancelledError, AsyncStreamError)]		519
+nim	write	_._/_._/streams/asyncstream.html#write,AsyncStreamWriter,string,int	proc write(wstream: AsyncStreamWriter; sbytes: string; msglen = -1): InternalRaisesFuture[\n    void, (CancelledError, AsyncStreamError)]		533
+nim	finish	_._/_._/streams/asyncstream.html#finish,AsyncStreamWriter	proc finish(wstream: AsyncStreamWriter): InternalRaisesFuture[void,\n    (CancelledError, AsyncStreamError)]		545
+nim	join	_._/_._/streams/asyncstream.html#join,AsyncStreamRW	proc join(rw: AsyncStreamRW): InternalRaisesFuture[void, (CancelledError,)]		554
+nim	close	_._/_._/streams/asyncstream.html#close,AsyncStreamReader	proc close(rstream: AsyncStreamReader)		559
+nim	close	_._/_._/streams/asyncstream.html#close,AsyncStreamWriter	proc close(wstream: AsyncStreamWriter)		577
+nim	closeWait	_._/_._/streams/asyncstream.html#closeWait,AsyncStreamRW	proc closeWait(rw: AsyncStreamRW): InternalRaisesFuture[void, void]		595
+nim	initUdata	_._/_._/streams/asyncstream.html#initUdata,AsyncStreamRW,ref.T	proc initUdata[T](rw: AsyncStreamRW; udata: ref T)		1089
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamWriter,AsyncStreamWriterVtbl	proc init(wstream: AsyncStreamWriter; vtbl: AsyncStreamWriterVtbl)		1094
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamWriter,AsyncStreamWriter,StreamWriterLoop	proc init(child, wsource: AsyncStreamWriter; loop: StreamWriterLoop;\n     queueSize = AsyncStreamDefaultQueueSize)		1104
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamWriter,AsyncStreamWriter,StreamWriterLoop,ref.T	proc init[T](child, wsource: AsyncStreamWriter; loop: StreamWriterLoop;\n        queueSize = AsyncStreamDefaultQueueSize; udata: ref T)		1117
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamReader,AsyncStreamReaderVtbl	proc init(rstream: AsyncStreamReader; vtbl: AsyncStreamReaderVtbl)		1125
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamReader,AsyncStreamReader,StreamReaderLoop	proc init(child, rsource: AsyncStreamReader; loop: StreamReaderLoop;\n     bufferSize = AsyncStreamDefaultBufferSize)		1135
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamReader,AsyncStreamReader,StreamReaderLoop,ref.T	proc init[T](child, rsource: AsyncStreamReader; loop: StreamReaderLoop;\n        bufferSize = AsyncStreamDefaultBufferSize; udata: ref T)		1146
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamWriter,StreamTransport	proc init(child: AsyncStreamWriter; tsource: StreamTransport)		1155
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamWriter,StreamTransport,ref.T	proc init[T](child: AsyncStreamWriter; tsource: StreamTransport; udata: ref T)		1164
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamWriter,AsyncStreamWriter	proc init(child, wsource: AsyncStreamWriter)		1172
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamWriter,AsyncStreamWriter,ref.T	proc init[T](child, wsource: AsyncStreamWriter; udata: ref T)		1180
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamReader,StreamTransport	proc init(child: AsyncStreamReader; tsource: StreamTransport)		1187
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamReader,StreamTransport,ref.T	proc init[T](child: AsyncStreamReader; tsource: StreamTransport; udata: ref T)		1194
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamReader,AsyncStreamReader	proc init(child, rsource: AsyncStreamReader)		1202
+nim	init	_._/_._/streams/asyncstream.html#init,AsyncStreamReader,AsyncStreamReader,ref.T	proc init[T](child, rsource: AsyncStreamReader; udata: ref T)		1210
+nim	newAsyncStreamReader	_._/_._/streams/asyncstream.html#newAsyncStreamReader,AsyncStreamReader,StreamReaderLoop,ref.T	proc newAsyncStreamReader[T](rsource: AsyncStreamReader; loop: StreamReaderLoop;\n                        bufferSize = AsyncStreamDefaultBufferSize; udata: ref T): AsyncStreamReader		1217
+nim	newAsyncStreamReader	_._/_._/streams/asyncstream.html#newAsyncStreamReader,AsyncStreamReader,StreamReaderLoop	proc newAsyncStreamReader(rsource: AsyncStreamReader; loop: StreamReaderLoop;\n                     bufferSize = AsyncStreamDefaultBufferSize): AsyncStreamReader		1235
+nim	newAsyncStreamReader	_._/_._/streams/asyncstream.html#newAsyncStreamReader,StreamTransport,ref.T	proc newAsyncStreamReader[T](tsource: StreamTransport; udata: ref T): AsyncStreamReader		1251
+nim	newAsyncStreamReader	_._/_._/streams/asyncstream.html#newAsyncStreamReader,StreamTransport	proc newAsyncStreamReader(tsource: StreamTransport): AsyncStreamReader		1265
+nim	newAsyncStreamReader	_._/_._/streams/asyncstream.html#newAsyncStreamReader,AsyncStreamReader,ref.T	proc newAsyncStreamReader[T](rsource: AsyncStreamReader; udata: ref T): AsyncStreamReader		1272
+nim	newAsyncStreamReader	_._/_._/streams/asyncstream.html#newAsyncStreamReader,AsyncStreamReader	proc newAsyncStreamReader(rsource: AsyncStreamReader): AsyncStreamReader		1283
+nim	newAsyncStreamWriter	_._/_._/streams/asyncstream.html#newAsyncStreamWriter,AsyncStreamWriter,StreamWriterLoop,ref.T	proc newAsyncStreamWriter[T](wsource: AsyncStreamWriter; loop: StreamWriterLoop;\n                        queueSize = AsyncStreamDefaultQueueSize; udata: ref T): AsyncStreamWriter		1289
+nim	newAsyncStreamWriter	_._/_._/streams/asyncstream.html#newAsyncStreamWriter,AsyncStreamWriter,StreamWriterLoop	proc newAsyncStreamWriter(wsource: AsyncStreamWriter; loop: StreamWriterLoop;\n                     queueSize = AsyncStreamDefaultQueueSize): AsyncStreamWriter		1307
+nim	newAsyncStreamWriter	_._/_._/streams/asyncstream.html#newAsyncStreamWriter,StreamTransport,ref.T	proc newAsyncStreamWriter[T](tsource: StreamTransport; udata: ref T): AsyncStreamWriter		1323
+nim	newAsyncStreamWriter	_._/_._/streams/asyncstream.html#newAsyncStreamWriter,StreamTransport	proc newAsyncStreamWriter(tsource: StreamTransport): AsyncStreamWriter		1337
+nim	newAsyncStreamWriter	_._/_._/streams/asyncstream.html#newAsyncStreamWriter,AsyncStreamWriter,ref.T	proc newAsyncStreamWriter[T](wsource: AsyncStreamWriter; udata: ref T): AsyncStreamWriter		1344
+nim	newAsyncStreamWriter	_._/_._/streams/asyncstream.html#newAsyncStreamWriter,AsyncStreamWriter	proc newAsyncStreamWriter(wsource: AsyncStreamWriter): AsyncStreamWriter		1355
+nim	getUserData	_._/_._/streams/asyncstream.html#getUserData,AsyncStreamRW	proc getUserData[T](rw: AsyncStreamRW): T		1361
+nim	setError	_._/_._/streams/asyncstream.html#setError,AsyncStreamRW,ref.AsyncStreamError	proc setError(rw: AsyncStreamRW; error: ref AsyncStreamError)		1366
+nim	setErrorAndRaise	_._/_._/streams/asyncstream.html#setErrorAndRaise,AsyncStreamRW,ref.AsyncStreamError	proc setErrorAndRaise(rw: AsyncStreamRW; error: ref AsyncStreamError)		1370
+nim	initSimpleVtbl	_._/_._/streams/asyncstream.html#initSimpleVtbl,typeAsyncStreamReaderVtbl,ReadOnceProc	proc initSimpleVtbl(T: type AsyncStreamReaderVtbl; readOnceImpl: ReadOnceProc;\n               streamBufferSize = DefaultStreamBufferSize): T:type		1380
+nim	initSimpleVtbl	_._/_._/streams/asyncstream.html#initSimpleVtbl,typeAsyncStreamWriterVtbl,WriteProc	proc initSimpleVtbl(T: type AsyncStreamWriterVtbl; writeImpl: WriteProc): T:type		1571
+nimgrp	close	_._/_._/streams/asyncstream.html#close-procs-all	proc		559
+nimgrp	consume	_._/_._/streams/asyncstream.html#consume-procs-all	proc		469
+nimgrp	initsimplevtbl	_._/_._/streams/asyncstream.html#initSimpleVtbl-procs-all	proc		1380
+nimgrp	write	_._/_._/streams/asyncstream.html#write-procs-all	proc		505
+nimgrp	read	_._/_._/streams/asyncstream.html#read-procs-all	proc		452
+nimgrp	init	_._/_._/streams/asyncstream.html#init-procs-all	proc		1094
+nimgrp	ateof	_._/_._/streams/asyncstream.html#atEof-procs-all	proc		295
+nimgrp	newasyncstreamreader	_._/_._/streams/asyncstream.html#newAsyncStreamReader-procs-all	proc		1217
+nimgrp	newasyncstreamwriter	_._/_._/streams/asyncstream.html#newAsyncStreamWriter-procs-all	proc		1289

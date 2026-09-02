@@ -1,0 +1,5 @@
+markupTitle	Async procedures	async_procs.html	Async procedures		0
+heading	The async pragma	async_procs.html#the-async-pragma	 The <tt class="docutils literal"><span class="pre">async</span></tt> pragma		0
+heading	await keyword	async_procs.html#await-keyword	 <tt class="docutils literal"><span class="pre">await</span></tt> keyword		0
+heading	Raw async procedures	async_procs.html#raw-async-procedures	 Raw async procedures		0
+heading	Callbacks and closures	async_procs.html#callbacks-and-closures	 Callbacks and closures		0

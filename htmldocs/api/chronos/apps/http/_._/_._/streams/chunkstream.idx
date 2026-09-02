@@ -1,0 +1,18 @@
+nimTitle	chunkstream	_._/_._/streams/chunkstream.html	module chronos/streams/chunkstream		0
+nim	ChunkedStreamReader	_._/_._/streams/chunkstream.html#ChunkedStreamReader	type ChunkedStreamReader		29
+nim	ChunkedStreamWriter	_._/_._/streams/chunkstream.html#ChunkedStreamWriter	type ChunkedStreamWriter		33
+nim	ChunkedStreamError	_._/_._/streams/chunkstream.html#ChunkedStreamError	object ChunkedStreamError		36
+nim	ChunkedStreamProtocolError	_._/_._/streams/chunkstream.html#ChunkedStreamProtocolError	object ChunkedStreamProtocolError		37
+nim	ChunkedStreamIncompleteError	_._/_._/streams/chunkstream.html#ChunkedStreamIncompleteError	object ChunkedStreamIncompleteError		38
+nim	hexValue	_._/_._/streams/chunkstream.html#hexValue,byte	proc hexValue(c: byte): int		47
+nim	init	_._/_._/streams/chunkstream.html#init,ChunkedStreamReader,AsyncStreamReader,ref.T	proc init[T](child: ChunkedStreamReader; rsource: AsyncStreamReader;\n        bufferSize = ChunkBufferSize; udata: ref T)		190
+nim	init	_._/_._/streams/chunkstream.html#init,ChunkedStreamReader,AsyncStreamReader	proc init(child: ChunkedStreamReader; rsource: AsyncStreamReader;\n     bufferSize = ChunkBufferSize)		196
+nim	newChunkedStreamReader	_._/_._/streams/chunkstream.html#newChunkedStreamReader,AsyncStreamReader,ref.T	proc newChunkedStreamReader[T](rsource: AsyncStreamReader;\n                          bufferSize = AsyncStreamDefaultBufferSize;\n                          udata: ref T): ChunkedStreamReader		203
+nim	newChunkedStreamReader	_._/_._/streams/chunkstream.html#newChunkedStreamReader,AsyncStreamReader	proc newChunkedStreamReader(rsource: AsyncStreamReader;\n                       bufferSize = AsyncStreamDefaultBufferSize): ChunkedStreamReader		211
+nim	init	_._/_._/streams/chunkstream.html#init,ChunkedStreamWriter,AsyncStreamWriter,ref.T	proc init[T](child: ChunkedStreamWriter; wsource: AsyncStreamWriter;\n        queueSize = AsyncStreamDefaultQueueSize; udata: ref T)		290
+nim	init	_._/_._/streams/chunkstream.html#init,ChunkedStreamWriter,AsyncStreamWriter	proc init(child: ChunkedStreamWriter; wsource: AsyncStreamWriter;\n     queueSize = AsyncStreamDefaultQueueSize)		297
+nim	newChunkedStreamWriter	_._/_._/streams/chunkstream.html#newChunkedStreamWriter,AsyncStreamWriter,ref.T	proc newChunkedStreamWriter[T](wsource: AsyncStreamWriter;\n                          queueSize = AsyncStreamDefaultQueueSize; udata: ref T): ChunkedStreamWriter		303
+nim	newChunkedStreamWriter	_._/_._/streams/chunkstream.html#newChunkedStreamWriter,AsyncStreamWriter	proc newChunkedStreamWriter(wsource: AsyncStreamWriter;\n                       queueSize = AsyncStreamDefaultQueueSize): ChunkedStreamWriter		311
+nimgrp	newchunkedstreamwriter	_._/_._/streams/chunkstream.html#newChunkedStreamWriter-procs-all	proc		303
+nimgrp	init	_._/_._/streams/chunkstream.html#init-procs-all	proc		190
+nimgrp	newchunkedstreamreader	_._/_._/streams/chunkstream.html#newChunkedStreamReader-procs-all	proc		203

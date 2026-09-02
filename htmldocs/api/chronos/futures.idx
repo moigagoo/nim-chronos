@@ -1,0 +1,33 @@
+nimTitle	futures	futures.html	module chronos/futures		0
+nim	LocationKind	futures.html#LocationKind	enum LocationKind		21
+nim	CallbackFunc	futures.html#CallbackFunc	type CallbackFunc		27
+nim	InternalAsyncCallback	futures.html#InternalAsyncCallback	object InternalAsyncCallback		30
+nim	FutureState	futures.html#FutureState	enum FutureState		34
+nim	FutureFlag	futures.html#FutureFlag	enum FutureFlag		37
+nim	FutureFlags	futures.html#FutureFlags	type FutureFlags		53
+nim	InternalFutureBase	futures.html#InternalFutureBase	object InternalFutureBase		55
+nim	FutureBase	futures.html#FutureBase	type FutureBase		86
+nim	Future	futures.html#Future	type Future		89
+nim	FutureDefect	futures.html#FutureDefect	object FutureDefect		93
+nim	FutureError	futures.html#FutureError	object FutureError		96
+nim	CancelledError	futures.html#CancelledError	object CancelledError		99
+nim	id	futures.html#id.t,FutureBase	template id(fut: FutureBase): uint		110
+nim	internalInitFutureBase	futures.html#internalInitFutureBase,FutureBase,ptr.SrcLoc,FutureState,FutureFlags	proc internalInitFutureBase(fut: FutureBase; loc: ptr SrcLoc; state: FutureState;\n                       flags: FutureFlags)		123
+nim	init	futures.html#init.t,typeFuture[T],static[string]	template init[T](F: type Future[T]; fromProc: static[string] = ""): Future[T]		156
+nim	init	futures.html#init.t,typeFuture[T],static[string],static[FutureFlags]	template init[T](F: type Future[T]; fromProc: static[string] = "";\n        flags: static[FutureFlags]): Future[T]		165
+nim	completed	futures.html#completed.t,typeFuture,static[string]	template completed(F: type Future; fromProc: static[string] = ""): Future[void]		176
+nim	completed	futures.html#completed.t,typeFuture,T,static[string]	template completed[T: not void](F: type Future; valueParam: T;\n                       fromProc: static[string] = ""): Future[T]		184
+nim	failed	futures.html#failed.t,typeFuture[T],ref.CatchableError,static[string]	template failed[T](F: type Future[T]; errorParam: ref CatchableError;\n          fromProc: static[string] = ""): Future[T]		192
+nim	state	futures.html#state,FutureBase	proc state(future: FutureBase): FutureState		206
+nim	flags	futures.html#flags,FutureBase	proc flags(future: FutureBase): FutureFlags		209
+nim	finished	futures.html#finished,FutureBase	proc finished(future: FutureBase): bool		212
+nim	cancelled	futures.html#cancelled,FutureBase	proc cancelled(future: FutureBase): bool		218
+nim	failed	futures.html#failed,FutureBase	proc failed(future: FutureBase): bool		222
+nim	completed	futures.html#completed,FutureBase	proc completed(future: FutureBase): bool		226
+nim	location	futures.html#location,FutureBase	proc location(future: FutureBase): array[LocationKind, ptr SrcLoc]		230
+nim	value	futures.html#value,Future[T: not void]	proc value[T: not void](future: Future[T]): lent T		233
+nim	value	futures.html#value,Future[void]	proc value(future: Future[void])		245
+nim	error	futures.html#error,FutureBase	proc error(future: FutureBase): ref CatchableError		255
+nimgrp	value	futures.html#value-procs-all	proc		233
+nimgrp	completed	futures.html#completed-templates-all	template		176
+nimgrp	init	futures.html#init-templates-all	template		156

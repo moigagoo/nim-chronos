@@ -1,0 +1,9 @@
+markupTitle	Concepts	concepts.html	Concepts		0
+heading	The dispatcher	concepts.html#the-dispatcher	 The dispatcher		0
+heading	The Future type	concepts.html#the-future-type	 The <tt class="docutils literal"><span class="pre">Future</span></tt> type		0
+heading	The poll call	concepts.html#the-poll-call	 The <tt class="docutils literal"><span class="pre">poll</span></tt> call		0
+heading	Cancellation	concepts.html#cancellation	 Cancellation		0
+heading	Ownership	concepts.html#cancellation-ownership	  Ownership		0
+heading	noCancel	concepts.html#cancellation-nocancel	  <tt class="docutils literal"><span class="pre">noCancel</span></tt>		0
+heading	join	concepts.html#cancellation-join	  <tt class="docutils literal"><span class="pre">join</span></tt>		0
+heading	Compile-time configuration	concepts.html#compileminustime-configuration	 Compile-time configuration		0

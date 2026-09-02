@@ -1,0 +1,19 @@
+nimTitle	osutils	osutils.html	module chronos/osutils		0
+nim	PipeHeaderName	osutils.html#PipeHeaderName	const PipeHeaderName		19
+nim	SignalPrefixName	osutils.html#SignalPrefixName	const SignalPrefixName		20
+nim	MaxSignalEventLength	osutils.html#MaxSignalEventLength	const MaxSignalEventLength		21
+nim	MaxSignalSuffixLength	osutils.html#MaxSignalSuffixLength	const MaxSignalSuffixLength		22
+nim	DescriptorFlag	osutils.html#DescriptorFlag	enum DescriptorFlag		26
+nim	AsyncDescriptorDefault	osutils.html#AsyncDescriptorDefault	const AsyncDescriptorDefault		30
+nim	handleEintr	osutils.html#handleEintr.t,untyped	template handleEintr(body: untyped): untyped		326
+nim	setDescriptorBlocking	osutils.html#setDescriptorBlocking,cint,bool	proc setDescriptorBlocking(s: cint; value: bool): Result[void, OSErrorCode]		334
+nim	setDescriptorBlocking	osutils.html#setDescriptorBlocking,SocketHandle,bool	proc setDescriptorBlocking(s: SocketHandle; value: bool): Result[void, OSErrorCode]		349
+nim	setDescriptorInheritance	osutils.html#setDescriptorInheritance,cint,bool	proc setDescriptorInheritance(s: cint; value: bool): Result[void, OSErrorCode]		353
+nim	getDescriptorInheritance	osutils.html#getDescriptorInheritance,cint	proc getDescriptorInheritance(s: cint): Result[bool, OSErrorCode]		368
+nim	setDescriptorFlags	osutils.html#setDescriptorFlags,cint,bool,bool	proc setDescriptorFlags(s: cint; nonblock, cloexec: bool): Result[void, OSErrorCode]		374
+nim	closeFd	osutils.html#closeFd,cint	proc closeFd(s: cint): int		380
+nim	closeFd	osutils.html#closeFd,SocketHandle	proc closeFd(s: SocketHandle): int		383
+nim	acceptConn	osutils.html#acceptConn,cint,ptr.SockAddr,ptr.SockLen,set[DescriptorFlag]	proc acceptConn(a1: cint; a2: ptr SockAddr; a3: ptr SockLen; a4: set[DescriptorFlag]): Result[\n    cint, OSErrorCode]		386
+nim	createOsPipe	osutils.html#createOsPipe,set[DescriptorFlag],set[DescriptorFlag]	proc createOsPipe(readset, writeset: set[DescriptorFlag]): Result[\n    tuple[read: cint, write: cint], OSErrorCode]		414
+nimgrp	setdescriptorblocking	osutils.html#setDescriptorBlocking-procs-all	proc		334
+nimgrp	closefd	osutils.html#closeFd-procs-all	proc		380

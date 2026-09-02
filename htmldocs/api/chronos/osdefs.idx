@@ -1,0 +1,150 @@
+nimTitle	osdefs	osdefs.html	module chronos/osdefs		0
+nim	IP_MULTICAST_TTL	osdefs.html#IP_MULTICAST_TTL	const IP_MULTICAST_TTL		1050
+nim	EPOLLIN	osdefs.html#EPOLLIN	const EPOLLIN		1055
+nim	EPOLLPRI	osdefs.html#EPOLLPRI	const EPOLLPRI		1056
+nim	EPOLLOUT	osdefs.html#EPOLLOUT	const EPOLLOUT		1057
+nim	EPOLLERR	osdefs.html#EPOLLERR	const EPOLLERR		1058
+nim	EPOLLHUP	osdefs.html#EPOLLHUP	const EPOLLHUP		1059
+nim	EPOLLRDNORM	osdefs.html#EPOLLRDNORM	const EPOLLRDNORM		1060
+nim	EPOLLRDBAND	osdefs.html#EPOLLRDBAND	const EPOLLRDBAND		1061
+nim	EPOLLWRNORM	osdefs.html#EPOLLWRNORM	const EPOLLWRNORM		1062
+nim	EPOLLWRBAND	osdefs.html#EPOLLWRBAND	const EPOLLWRBAND		1063
+nim	EPOLLMSG	osdefs.html#EPOLLMSG	const EPOLLMSG		1064
+nim	EPOLLRDHUP	osdefs.html#EPOLLRDHUP	const EPOLLRDHUP		1065
+nim	EPOLLEXCLUSIVE	osdefs.html#EPOLLEXCLUSIVE	const EPOLLEXCLUSIVE		1066
+nim	EPOLLWAKEUP	osdefs.html#EPOLLWAKEUP	const EPOLLWAKEUP		1067
+nim	EPOLLONESHOT	osdefs.html#EPOLLONESHOT	const EPOLLONESHOT		1068
+nim	EPOLLET	osdefs.html#EPOLLET	const EPOLLET		1069
+nim	SFD_CLOEXEC	osdefs.html#SFD_CLOEXEC	const SFD_CLOEXEC		1071
+nim	SFD_NONBLOCK	osdefs.html#SFD_NONBLOCK	const SFD_NONBLOCK		1072
+nim	EFD_CLOEXEC	osdefs.html#EFD_CLOEXEC	const EFD_CLOEXEC		1073
+nim	EFD_NONBLOCK	osdefs.html#EFD_NONBLOCK	const EFD_NONBLOCK		1074
+nim	TFD_CLOEXEC	osdefs.html#TFD_CLOEXEC	const TFD_CLOEXEC		1075
+nim	TFD_NONBLOCK	osdefs.html#TFD_NONBLOCK	const TFD_NONBLOCK		1076
+nim	EPOLL_CTL_ADD	osdefs.html#EPOLL_CTL_ADD	const EPOLL_CTL_ADD		1078
+nim	EPOLL_CTL_DEL	osdefs.html#EPOLL_CTL_DEL	const EPOLL_CTL_DEL		1079
+nim	EPOLL_CTL_MOD	osdefs.html#EPOLL_CTL_MOD	const EPOLL_CTL_MOD		1080
+nim	EpollData	osdefs.html#EpollData	object EpollData		1090
+nim	EpollEvent	osdefs.html#EpollEvent	object EpollEvent		1097
+nim	SignalFdInfo	osdefs.html#SignalFdInfo	object SignalFdInfo		1102
+nim	epoll_create	osdefs.html#epoll_create,cint	proc epoll_create(size: cint): cint		1121
+nim	epoll_create1	osdefs.html#epoll_create1,cint	proc epoll_create1(flags: cint): cint		1124
+nim	epoll_ctl	osdefs.html#epoll_ctl,cint,cint,cint,ptr.EpollEvent	proc epoll_ctl(epfd: cint; op: cint; fd: cint; event: ptr EpollEvent): cint		1127
+nim	epoll_wait	osdefs.html#epoll_wait,cint,ptr.EpollEvent,cint,cint	proc epoll_wait(epfd: cint; events: ptr EpollEvent; maxevents: cint; timeout: cint): cint		1130
+nim	timerfd_create	osdefs.html#timerfd_create,ClockId,cint	proc timerfd_create(clock_id: ClockId; flags: cint): cint		1134
+nim	timerfd_settime	osdefs.html#timerfd_settime,cint,cint,Itimerspec,Itimerspec	proc timerfd_settime(ufd: cint; flags: cint; utmr: var Itimerspec;\n                otmr: var Itimerspec): cint		1136
+nim	eventfd	osdefs.html#eventfd,cuint,cint	proc eventfd(count: cuint; flags: cint): cint		1140
+nim	signalfd	osdefs.html#signalfd,cint,Sigset,cint	proc signalfd(fd: cint; mask: var Sigset; flags: cint): cint		1142
+nim	pipe2	osdefs.html#pipe2,array[,cint],cint	proc pipe2(a: array[0 .. 1, cint]; flags: cint): cint		1207
+nim	accept4	osdefs.html#accept4,cint,ptr.SockAddr,ptr.SockLen,cint	proc accept4(a1: cint; a2: ptr SockAddr; a3: ptr SockLen; a4: cint): cint		1210
+nim	SOCK_NONBLOCK	osdefs.html#SOCK_NONBLOCK	const SOCK_NONBLOCK		1215
+nim	SOCK_CLOEXEC	osdefs.html#SOCK_CLOEXEC	const SOCK_CLOEXEC		1216
+nim	TCP_NODELAY	osdefs.html#TCP_NODELAY	const TCP_NODELAY		1217
+nim	IPPROTO_TCP	osdefs.html#IPPROTO_TCP	const IPPROTO_TCP		1218
+nim	O_CLOEXEC	osdefs.html#O_CLOEXEC	const O_CLOEXEC		1219
+nim	POSIX_SPAWN_USEVFORK	osdefs.html#POSIX_SPAWN_USEVFORK	const POSIX_SPAWN_USEVFORK		1220
+nim	IPV6_V6ONLY	osdefs.html#IPV6_V6ONLY	const IPV6_V6ONLY		1221
+nim	POSIX_SPAWN_RESETIDS	osdefs.html#POSIX_SPAWN_RESETIDS	const POSIX_SPAWN_RESETIDS		1281
+nim	POSIX_SPAWN_SETPGROUP	osdefs.html#POSIX_SPAWN_SETPGROUP	const POSIX_SPAWN_SETPGROUP		1282
+nim	POSIX_SPAWN_SETSCHEDPARAM	osdefs.html#POSIX_SPAWN_SETSCHEDPARAM	const POSIX_SPAWN_SETSCHEDPARAM		1283
+nim	POSIX_SPAWN_SETSCHEDULER	osdefs.html#POSIX_SPAWN_SETSCHEDULER	const POSIX_SPAWN_SETSCHEDULER		1284
+nim	POSIX_SPAWN_SETSIGDEF	osdefs.html#POSIX_SPAWN_SETSIGDEF	const POSIX_SPAWN_SETSIGDEF		1285
+nim	POSIX_SPAWN_SETSIGMASK	osdefs.html#POSIX_SPAWN_SETSIGMASK	const POSIX_SPAWN_SETSIGMASK		1286
+nim	SchedParam	osdefs.html#SchedParam	object SchedParam		1290
+nim	PosixSpawnAttr	osdefs.html#PosixSpawnAttr	object PosixSpawnAttr		1301
+nim	PosixSpawnFileActions	osdefs.html#PosixSpawnFileActions	object PosixSpawnFileActions		1311
+nim	posixSpawn	osdefs.html#posixSpawn,Pid,cstring,PosixSpawnFileActions,PosixSpawnAttr,cstringArray,cstringArray	proc posixSpawn(a1: var Pid; a2: cstring; a3: var PosixSpawnFileActions;\n           a4: var PosixSpawnAttr; a5, a6: cstringArray): cint		1317
+nim	posixSpawnp	osdefs.html#posixSpawnp,Pid,cstring,PosixSpawnFileActions,PosixSpawnAttr,cstringArray,cstringArray	proc posixSpawnp(a1: var Pid; a2: cstring; a3: var PosixSpawnFileActions;\n            a4: var PosixSpawnAttr; a5, a6: cstringArray): cint		1320
+nim	posixSpawnFileActionsInit	osdefs.html#posixSpawnFileActionsInit,PosixSpawnFileActions	proc posixSpawnFileActionsInit(a1: var PosixSpawnFileActions): cint		1324
+nim	posixSpawnFileActionsDestroy	osdefs.html#posixSpawnFileActionsDestroy,PosixSpawnFileActions	proc posixSpawnFileActionsDestroy(a1: var PosixSpawnFileActions): cint		1327
+nim	posixSpawnFileActionsAddClose	osdefs.html#posixSpawnFileActionsAddClose,PosixSpawnFileActions,cint	proc posixSpawnFileActionsAddClose(a1: var PosixSpawnFileActions; a2: cint): cint		1331
+nim	posixSpawnFileActionsAddDup2	osdefs.html#posixSpawnFileActionsAddDup2,PosixSpawnFileActions,cint,cint	proc posixSpawnFileActionsAddDup2(a1: var PosixSpawnFileActions; a2, a3: cint): cint		1335
+nim	posixSpawnFileActionsAddOpen	osdefs.html#posixSpawnFileActionsAddOpen,PosixSpawnFileActions,cint,cstring,cint,Mode	proc posixSpawnFileActionsAddOpen(a1: var PosixSpawnFileActions; a2: cint;\n                             a3: cstring; a4: cint; a5: Mode): cint		1339
+nim	posixSpawnAttrInit	osdefs.html#posixSpawnAttrInit,PosixSpawnAttr	proc posixSpawnAttrInit(a1: var PosixSpawnAttr): cint		1345
+nim	posixSpawnAttrDestroy	osdefs.html#posixSpawnAttrDestroy,PosixSpawnAttr	proc posixSpawnAttrDestroy(a1: var PosixSpawnAttr): cint		1348
+nim	posixSpawnAttrGetSigDefault	osdefs.html#posixSpawnAttrGetSigDefault,PosixSpawnAttr,Sigset	proc posixSpawnAttrGetSigDefault(a1: var PosixSpawnAttr; a2: var Sigset): cint		1352
+nim	posixSpawnAttrSetSigDefault	osdefs.html#posixSpawnAttrSetSigDefault,PosixSpawnAttr,Sigset	proc posixSpawnAttrSetSigDefault(a1: var PosixSpawnAttr; a2: var Sigset): cint		1356
+nim	posixSpawnAttrGetFlags	osdefs.html#posixSpawnAttrGetFlags,PosixSpawnAttr,cshort	proc posixSpawnAttrGetFlags(a1: var PosixSpawnAttr; a2: var cshort): cint		1360
+nim	posixSpawnAttrSetFlags	osdefs.html#posixSpawnAttrSetFlags,PosixSpawnAttr,cint	proc posixSpawnAttrSetFlags(a1: var PosixSpawnAttr; a2: cint): cint		1364
+nim	posixSpawnAttrGetPgroup	osdefs.html#posixSpawnAttrGetPgroup,PosixSpawnAttr,Pid	proc posixSpawnAttrGetPgroup(a1: var PosixSpawnAttr; a2: var Pid): cint		1367
+nim	posixSpawnAttrSetPgroup	osdefs.html#posixSpawnAttrSetPgroup,PosixSpawnAttr,Pid	proc posixSpawnAttrSetPgroup(a1: var PosixSpawnAttr; a2: Pid): cint		1371
+nim	posixSpawnAttrGetSchedParam	osdefs.html#posixSpawnAttrGetSchedParam,PosixSpawnAttr,SchedParam	proc posixSpawnAttrGetSchedParam(a1: var PosixSpawnAttr; a2: var SchedParam): cint		1374
+nim	posixSpawnAttrSetSchedParam	osdefs.html#posixSpawnAttrSetSchedParam,PosixSpawnAttr,SchedParam	proc posixSpawnAttrSetSchedParam(a1: var PosixSpawnAttr; a2: var SchedParam): cint		1378
+nim	posixSpawnAttrGetSchedPolicy	osdefs.html#posixSpawnAttrGetSchedPolicy,PosixSpawnAttr,cint	proc posixSpawnAttrGetSchedPolicy(a1: var PosixSpawnAttr; a2: var cint): cint		1382
+nim	posixSpawnAttrSetSchedPolicy	osdefs.html#posixSpawnAttrSetSchedPolicy,PosixSpawnAttr,cint	proc posixSpawnAttrSetSchedPolicy(a1: var PosixSpawnAttr; a2: cint): cint		1386
+nim	posixSpawnAttrGetSigMask	osdefs.html#posixSpawnAttrGetSigMask,PosixSpawnAttr,Sigset	proc posixSpawnAttrGetSigMask(a1: var PosixSpawnAttr; a2: var Sigset): cint		1390
+nim	posixSpawnAttrSetSigMask	osdefs.html#posixSpawnAttrSetSigMask,PosixSpawnAttr,Sigset	proc posixSpawnAttrSetSigMask(a1: var PosixSpawnAttr; a2: var Sigset): cint		1394
+nim	P_PID	osdefs.html#P_PID	const P_PID		1401
+nim	WNOHANG	osdefs.html#WNOHANG	const WNOHANG		1402
+nim	WSTOPPED	osdefs.html#WSTOPPED	const WSTOPPED		1403
+nim	WEXITED	osdefs.html#WEXITED	const WEXITED		1404
+nim	WNOWAIT	osdefs.html#WNOWAIT	const WNOWAIT		1405
+nim	WAITEXITSTATUS	osdefs.html#WAITEXITSTATUS.t,cint	template WAITEXITSTATUS(s: cint): cint		1408
+nim	WAITTERMSIG	osdefs.html#WAITTERMSIG.t,cint	template WAITTERMSIG(s: cint): cint		1410
+nim	WAITSTOPSIG	osdefs.html#WAITSTOPSIG.t,cint	template WAITSTOPSIG(s: cint): cint		1412
+nim	WAITIFEXITED	osdefs.html#WAITIFEXITED.t,cint	template WAITIFEXITED(s: cint): bool		1414
+nim	WAITIFSIGNALED	osdefs.html#WAITIFSIGNALED.t,cint	template WAITIFSIGNALED(s: cint): bool		1416
+nim	WAITIFSTOPPED	osdefs.html#WAITIFSTOPPED.t,cint	template WAITIFSTOPPED(s: cint): bool		1418
+nim	WAITIFCONTINUED	osdefs.html#WAITIFCONTINUED.t,cint	template WAITIFCONTINUED(s: cint): bool		1420
+nim	INVALID_SOCKET	osdefs.html#INVALID_SOCKET	const INVALID_SOCKET		1555
+nim	INVALID_HANDLE_VALUE	osdefs.html#INVALID_HANDLE_VALUE	const INVALID_HANDLE_VALUE		1556
+nim	`==`	osdefs.html#==,SocketHandle,int	proc `==`(x: SocketHandle; y: int): bool		1558
+nim	`==`	osdefs.html#==,SocketHandle,SocketHandle	proc `==`(x: SocketHandle; y: SocketHandle): bool		1560
+nim	AF_NETLINK	osdefs.html#AF_NETLINK	const AF_NETLINK		1713
+nim	AF_PACKET	osdefs.html#AF_PACKET	const AF_PACKET		1714
+nim	NETLINK_ROUTE	osdefs.html#NETLINK_ROUTE	const NETLINK_ROUTE		1715
+nim	NLMSG_ALIGNTO	osdefs.html#NLMSG_ALIGNTO	const NLMSG_ALIGNTO		1716
+nim	RTA_ALIGNTO	osdefs.html#RTA_ALIGNTO	const RTA_ALIGNTO		1717
+nim	RTA_DST	osdefs.html#RTA_DST	const RTA_DST		1719
+nim	RTA_OIF	osdefs.html#RTA_OIF	const RTA_OIF		1722
+nim	RTA_GATEWAY	osdefs.html#RTA_GATEWAY	const RTA_GATEWAY		1723
+nim	RTA_PREFSRC	osdefs.html#RTA_PREFSRC	const RTA_PREFSRC		1725
+nim	RTM_NEWLINK	osdefs.html#RTM_NEWLINK	const RTM_NEWLINK		1727
+nim	RTM_NEWROUTE	osdefs.html#RTM_NEWROUTE	const RTM_NEWROUTE		1728
+nim	RTM_F_LOOKUP_TABLE	osdefs.html#RTM_F_LOOKUP_TABLE	const RTM_F_LOOKUP_TABLE		1730
+nim	RTM_GETLINK	osdefs.html#RTM_GETLINK	const RTM_GETLINK		1732
+nim	RTM_GETADDR	osdefs.html#RTM_GETADDR	const RTM_GETADDR		1733
+nim	RTM_GETROUTE	osdefs.html#RTM_GETROUTE	const RTM_GETROUTE		1734
+nim	NLM_F_REQUEST	osdefs.html#NLM_F_REQUEST	const NLM_F_REQUEST		1735
+nim	NLM_F_ROOT	osdefs.html#NLM_F_ROOT	const NLM_F_ROOT		1736
+nim	NLM_F_MATCH	osdefs.html#NLM_F_MATCH	const NLM_F_MATCH		1737
+nim	NLM_F_DUMP	osdefs.html#NLM_F_DUMP	const NLM_F_DUMP		1738
+nim	IFLIST_REPLY_BUFFER	osdefs.html#IFLIST_REPLY_BUFFER	const IFLIST_REPLY_BUFFER		1739
+nim	InvalidSocketHandle	osdefs.html#InvalidSocketHandle	const InvalidSocketHandle		1740
+nim	NLMSG_DONE	osdefs.html#NLMSG_DONE	const NLMSG_DONE		1741
+nim	NLMSG_ERROR	osdefs.html#NLMSG_ERROR	const NLMSG_ERROR		1743
+nim	IFLA_ADDRESS	osdefs.html#IFLA_ADDRESS	const IFLA_ADDRESS		1746
+nim	IFLA_IFNAME	osdefs.html#IFLA_IFNAME	const IFLA_IFNAME		1747
+nim	IFLA_MTU	osdefs.html#IFLA_MTU	const IFLA_MTU		1748
+nim	IFLA_OPERSTATE	osdefs.html#IFLA_OPERSTATE	const IFLA_OPERSTATE		1749
+nim	IFA_ADDRESS	osdefs.html#IFA_ADDRESS	const IFA_ADDRESS		1751
+nim	IFA_LOCAL	osdefs.html#IFA_LOCAL	const IFA_LOCAL		1752
+nim	ARPHRD_ETHER	osdefs.html#ARPHRD_ETHER	const ARPHRD_ETHER		1756
+nim	ARPHRD_EETHER	osdefs.html#ARPHRD_EETHER	const ARPHRD_EETHER		1757
+nim	ARPHRD_ARCNET	osdefs.html#ARPHRD_ARCNET	const ARPHRD_ARCNET		1762
+nim	ARPHRD_ATM	osdefs.html#ARPHRD_ATM	const ARPHRD_ATM		1765
+nim	ARPHRD_IEEE1394	osdefs.html#ARPHRD_IEEE1394	const ARPHRD_IEEE1394		1767
+nim	ARPHRD_SLIP	osdefs.html#ARPHRD_SLIP	const ARPHRD_SLIP		1770
+nim	ARPHRD_CSLIP	osdefs.html#ARPHRD_CSLIP	const ARPHRD_CSLIP		1771
+nim	ARPHRD_SLIP6	osdefs.html#ARPHRD_SLIP6	const ARPHRD_SLIP6		1772
+nim	ARPHRD_CSLIP6	osdefs.html#ARPHRD_CSLIP6	const ARPHRD_CSLIP6		1773
+nim	ARPHRD_PPP	osdefs.html#ARPHRD_PPP	const ARPHRD_PPP		1780
+nim	ARPHRD_CISCO	osdefs.html#ARPHRD_CISCO	const ARPHRD_CISCO		1781
+nim	ARPHRD_HDLC	osdefs.html#ARPHRD_HDLC	const ARPHRD_HDLC		1782
+nim	ARPHRD_LAPB	osdefs.html#ARPHRD_LAPB	const ARPHRD_LAPB		1783
+nim	ARPHRD_FRAD	osdefs.html#ARPHRD_FRAD	const ARPHRD_FRAD		1788
+nim	ARPHRD_LOOPBACK	osdefs.html#ARPHRD_LOOPBACK	const ARPHRD_LOOPBACK		1790
+nim	ARPHRD_HIPPI	osdefs.html#ARPHRD_HIPPI	const ARPHRD_HIPPI		1798
+nim	ARPHRD_IEEE80211	osdefs.html#ARPHRD_IEEE80211	const ARPHRD_IEEE80211		1807
+nim	ARPHRD_IEEE80211_PRISM	osdefs.html#ARPHRD_IEEE80211_PRISM	const ARPHRD_IEEE80211_PRISM		1808
+nim	ARPHRD_IEEE80211_RADIOTAP	osdefs.html#ARPHRD_IEEE80211_RADIOTAP	const ARPHRD_IEEE80211_RADIOTAP		1809
+nim	Sockaddr_nl	osdefs.html#Sockaddr_nl	object Sockaddr_nl		1822
+nim	NlMsgHeader	osdefs.html#NlMsgHeader	object NlMsgHeader		1828
+nim	IfInfoMessage	osdefs.html#IfInfoMessage	object IfInfoMessage		1835
+nim	IfAddrMessage	osdefs.html#IfAddrMessage	object IfAddrMessage		1843
+nim	RtMessage	osdefs.html#RtMessage	object RtMessage		1850
+nim	RtAttr	osdefs.html#RtAttr	object RtAttr		1861
+nim	RtGenMsg	osdefs.html#RtGenMsg	object RtGenMsg		1865
+nim	NLReq	osdefs.html#NLReq	object NLReq		1868
+nim	NLRouteReq	osdefs.html#NLRouteReq	object NLRouteReq		1872
+nimgrp	==	osdefs.html#==-procs-all	proc		1558

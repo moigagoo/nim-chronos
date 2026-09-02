@@ -1,0 +1,96 @@
+nimTitle	timer	timer.html	module chronos/timer		0
+nim	asyncTimer	timer.html#asyncTimer	const asyncTimer		30
+nim	fastEpochTime	timer.html#fastEpochTime	proc fastEpochTime(): uint64		127
+nim	Moment	timer.html#Moment	object Moment		150
+nim	Duration	timer.html#Duration	object Duration		156
+nim	SomeIntegerI64	timer.html#SomeIntegerI64	type SomeIntegerI64		163
+nim	`+`	timer.html#+,Duration,Duration	proc `+`(a: Duration; b: Duration): Duration		165
+nim	`+`	timer.html#+,Duration,Moment	proc `+`(a: Duration; b: Moment): Moment		169
+nim	`+`	timer.html#+,Moment,Duration	proc `+`(a: Moment; b: Duration): Moment		173
+nim	`+=`	timer.html#+=,Moment,Duration	proc `+=`(a: var Moment; b: Duration)		177
+nim	`+=`	timer.html#+=,Duration,Duration	proc `+=`(a: var Duration; b: Duration)		181
+nim	`-`	timer.html#-,Moment,Moment	proc `-`(a, b: Moment): Duration		185
+nim	`-`	timer.html#-,Moment,Duration	proc `-`(a: Moment; b: Duration): Moment		191
+nim	`-`	timer.html#-,Duration,Duration	proc `-`(a: Duration; b: Duration): Duration		197
+nim	`-=`	timer.html#-=,Duration,Duration	proc `-=`(a: var Duration; b: Duration)		203
+nim	`-=`	timer.html#-=,Moment,Duration	proc `-=`(a: var Moment; b: Duration)		207
+nim	`==`	timer.html#==,Duration,Duration	proc `==`(a, b: Duration): bool		211
+nim	`==`	timer.html#==,Moment,Moment	proc `==`(a, b: Moment): bool		215
+nim	`<`	timer.html#<,Duration,Duration	proc `<`(a, b: Duration): bool		219
+nim	`<`	timer.html#<,Moment,Moment	proc `<`(a, b: Moment): bool		223
+nim	`<=`	timer.html#<=,Duration,Duration	proc `<=`(a, b: Duration): bool		227
+nim	`<=`	timer.html#<=,Moment,Moment	proc `<=`(a, b: Moment): bool		231
+nim	`*`	timer.html#*,Duration,SomeIntegerI64	proc `*`(a: Duration; b: SomeIntegerI64): Duration		235
+nim	`*`	timer.html#*,SomeIntegerI64,Duration	proc `*`(a: SomeIntegerI64; b: Duration): Duration		239
+nim	`div`	timer.html#div,Duration,SomeIntegerI64	proc `div`(a: Duration; b: SomeIntegerI64): Duration		243
+nim	Nanosecond	timer.html#Nanosecond	const Nanosecond		248
+nim	Microsecond	timer.html#Microsecond	const Microsecond		249
+nim	Millisecond	timer.html#Millisecond	const Millisecond		250
+nim	Second	timer.html#Second	const Second		251
+nim	Minute	timer.html#Minute	const Minute		252
+nim	Hour	timer.html#Hour	const Hour		253
+nim	Day	timer.html#Day	const Day		254
+nim	Week	timer.html#Week	const Week		255
+nim	ZeroDuration	timer.html#ZeroDuration	const ZeroDuration		257
+nim	InfiniteDuration	timer.html#InfiniteDuration	const InfiniteDuration		258
+nim	high	timer.html#high.t,typedesc[Moment]	template high(T: typedesc[Moment]): Moment		260
+nim	low	timer.html#low.t,typedesc[Moment]	template low(T: typedesc[Moment]): Moment		263
+nim	high	timer.html#high.t,typedesc[Duration]	template high(T: typedesc[Duration]): Duration		266
+nim	low	timer.html#low.t,typedesc[Duration]	template low(T: typedesc[Duration]): Duration		269
+nim	nanoseconds	timer.html#nanoseconds,SomeIntegerI64	proc nanoseconds(v: SomeIntegerI64): Duration		272
+nim	microseconds	timer.html#microseconds,SomeIntegerI64	proc microseconds(v: SomeIntegerI64): Duration		276
+nim	milliseconds	timer.html#milliseconds,SomeIntegerI64	proc milliseconds(v: SomeIntegerI64): Duration		280
+nim	seconds	timer.html#seconds,SomeIntegerI64	proc seconds(v: SomeIntegerI64): Duration		284
+nim	minutes	timer.html#minutes,SomeIntegerI64	proc minutes(v: SomeIntegerI64): Duration		288
+nim	hours	timer.html#hours,SomeIntegerI64	proc hours(v: SomeIntegerI64): Duration		292
+nim	days	timer.html#days,SomeIntegerI64	proc days(v: SomeIntegerI64): Duration		296
+nim	weeks	timer.html#weeks,SomeIntegerI64	proc weeks(v: SomeIntegerI64): Duration		300
+nim	nanoseconds	timer.html#nanoseconds,Duration	proc nanoseconds(v: Duration): int64		304
+nim	microseconds	timer.html#microseconds,Duration	proc microseconds(v: Duration): int64		308
+nim	milliseconds	timer.html#milliseconds,Duration	proc milliseconds(v: Duration): int64		312
+nim	seconds	timer.html#seconds,Duration	proc seconds(v: Duration): int64		316
+nim	minutes	timer.html#minutes,Duration	proc minutes(v: Duration): int64		320
+nim	hours	timer.html#hours,Duration	proc hours(v: Duration): int64		324
+nim	days	timer.html#days,Duration	proc days(v: Duration): int64		328
+nim	weeks	timer.html#weeks,Duration	proc weeks(v: Duration): int64		332
+nim	nanos	timer.html#nanos,SomeIntegerI64	proc nanos(v: SomeIntegerI64): Duration		336
+nim	micros	timer.html#micros,SomeIntegerI64	proc micros(v: SomeIntegerI64): Duration		339
+nim	millis	timer.html#millis,SomeIntegerI64	proc millis(v: SomeIntegerI64): Duration		342
+nim	secs	timer.html#secs,SomeIntegerI64	proc secs(v: SomeIntegerI64): Duration		345
+nim	nanos	timer.html#nanos,Duration	proc nanos(v: Duration): int64		348
+nim	micros	timer.html#micros,Duration	proc micros(v: Duration): int64		351
+nim	millis	timer.html#millis,Duration	proc millis(v: Duration): int64		354
+nim	secs	timer.html#secs,Duration	proc secs(v: Duration): int64		357
+nim	toString	timer.html#toString	proc toString(a: timer.Duration; parts = int.high): string		364
+nim	`$`	timer.html#$,Duration	proc `$`(a: Duration): string		396
+nim	`$`	timer.html#$,Moment	proc `$`(a: Moment): string		400
+nim	isZero	timer.html#isZero,Duration	proc isZero(a: Duration): bool		408
+nim	isInfinite	timer.html#isInfinite,Duration	proc isInfinite(a: Duration): bool		412
+nim	now	timer.html#now,typedesc[Moment]	proc now(t: typedesc[Moment]): Moment		416
+nim	init	timer.html#init,typedesc[Moment],int64,Duration	proc init(t: typedesc[Moment]; value: int64; precision: Duration): Moment		420
+nim	epochSeconds	timer.html#epochSeconds,Moment	proc epochSeconds(moment: Moment): int64		425
+nim	epochNanoSeconds	timer.html#epochNanoSeconds,Moment	proc epochNanoSeconds(moment: Moment): int64		428
+nim	fromNow	timer.html#fromNow,typedesc[Moment],Duration	proc fromNow(t: typedesc[Moment]; a: Duration): Moment		431
+nimgrp	==	timer.html#==-procs-all	proc		211
+nimgrp	+	timer.html#+-procs-all	proc		165
+nimgrp	-	timer.html#--procs-all	proc		185
+nimgrp	micros	timer.html#micros-procs-all	proc		339
+nimgrp	$	timer.html#$-procs-all	proc		396
+nimgrp	-=	timer.html#-=-procs-all	proc		203
+nimgrp	*	timer.html#*-procs-all	proc		235
+nimgrp	days	timer.html#days-procs-all	proc		296
+nimgrp	millis	timer.html#millis-procs-all	proc		342
+nimgrp	seconds	timer.html#seconds-procs-all	proc		284
+nimgrp	minutes	timer.html#minutes-procs-all	proc		288
+nimgrp	hours	timer.html#hours-procs-all	proc		292
+nimgrp	<=	timer.html#<=-procs-all	proc		227
+nimgrp	weeks	timer.html#weeks-procs-all	proc		300
+nimgrp	<	timer.html#<-procs-all	proc		219
+nimgrp	secs	timer.html#secs-procs-all	proc		345
+nimgrp	milliseconds	timer.html#milliseconds-procs-all	proc		280
+nimgrp	+=	timer.html#+=-procs-all	proc		177
+nimgrp	nanoseconds	timer.html#nanoseconds-procs-all	proc		272
+nimgrp	nanos	timer.html#nanos-procs-all	proc		336
+nimgrp	microseconds	timer.html#microseconds-procs-all	proc		276
+nimgrp	low	timer.html#low-templates-all	template		263
+nimgrp	high	timer.html#high-templates-all	template		260

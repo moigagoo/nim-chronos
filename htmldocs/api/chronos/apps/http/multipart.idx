@@ -1,0 +1,51 @@
+nimTitle	multipart	multipart.html	module chronos/apps/http/multipart		0
+nim	MultiPartSource	multipart.html#MultiPartSource	enum MultiPartSource		26
+nim	MultiPartWriterState	multipart.html#MultiPartWriterState	enum MultiPartWriterState		29
+nim	MultiPartReader	multipart.html#MultiPartReader	object MultiPartReader		33
+nim	MultiPartReaderRef	multipart.html#MultiPartReaderRef	type MultiPartReaderRef		45
+nim	MultiPartWriter	multipart.html#MultiPartWriter	object MultiPartWriter		47
+nim	MultiPartWriterRef	multipart.html#MultiPartWriterRef	type MultiPartWriterRef		59
+nim	MultiPart	multipart.html#MultiPart	object MultiPart		61
+nim	MultipartError	multipart.html#MultipartError	object MultipartError		74
+nim	MultipartEOMError	multipart.html#MultipartEOMError	object MultipartEOMError		75
+nim	BChar	multipart.html#BChar	type BChar		77
+nim	init	multipart.html#init,typedesc[MultiPartReader],openArray[A],openArray[B]	proc init[A: BChar; B: BChar](mpt: typedesc[MultiPartReader]; buffer: openArray[A];\n                         boundary: openArray[B]): MultiPartReader		123
+nim	new	multipart.html#new,typedesc[MultiPartReaderRef],HttpBodyReader,openArray[B]	proc new[B: BChar](mpt: typedesc[MultiPartReaderRef]; stream: HttpBodyReader;\n              boundary: openArray[B];\n              partHeadersMaxSize = MaxMultipartHeaderSize): MultiPartReaderRef		146
+nim	readPart	multipart.html#readPart,MultiPartReaderRef	proc readPart(mpr: MultiPartReaderRef): InternalRaisesFuture[MultiPart,\n    (CancelledError, HttpReadError, HttpProtocolError)]		187
+nim	getBody	multipart.html#getBody,MultiPart	proc getBody(mp: MultiPart): InternalRaisesFuture[seq[byte],\n    (CancelledError, HttpReadError, HttpProtocolError)]		245
+nim	consumeBody	multipart.html#consumeBody,MultiPart	proc consumeBody(mp: MultiPart): InternalRaisesFuture[void,\n    (CancelledError, HttpReadError, HttpProtocolError)]		257
+nim	getBodyStream	multipart.html#getBodyStream,MultiPart	proc getBodyStream(mp: MultiPart): HttpResult[AsyncStreamReader]		268
+nim	closeWait	multipart.html#closeWait,MultiPart	proc closeWait(mp: MultiPart): InternalRaisesFuture[void, void]		277
+nim	closeWait	multipart.html#closeWait,MultiPartReaderRef	proc closeWait(mpr: MultiPartReaderRef): InternalRaisesFuture[void, void]		285
+nim	getBytes	multipart.html#getBytes,MultiPart	proc getBytes(mp: MultiPart): seq[byte]		293
+nim	getString	multipart.html#getString,MultiPart	proc getString(mp: MultiPart): string		302
+nim	atEoM	multipart.html#atEoM,MultiPartReader	proc atEoM(mpr: var MultiPartReader): bool		311
+nim	atEoM	multipart.html#atEoM,MultiPartReaderRef	proc atEoM(mpr: MultiPartReaderRef): bool		320
+nim	getPart	multipart.html#getPart,MultiPartReader	proc getPart(mpr: var MultiPartReader): Result[MultiPart, string]		329
+nim	isEmpty	multipart.html#isEmpty,MultiPart	proc isEmpty(mp: MultiPart): bool		419
+nim	getMultipartBoundary	multipart.html#getMultipartBoundary,ContentTypeData	proc getMultipartBoundary(contentData: ContentTypeData): HttpResult[string]		435
+nim	init	multipart.html#init,typedesc[MultiPartWriter],openArray[B]	proc init[B: BChar](mpt: typedesc[MultiPartWriter]; boundary: openArray[B]): MultiPartWriter		474
+nim	new	multipart.html#new,typedesc[MultiPartWriterRef],HttpBodyWriter,openArray[B]	proc new[B: BChar](mpt: typedesc[MultiPartWriterRef]; stream: HttpBodyWriter;\n              boundary: openArray[B]): MultiPartWriterRef		502
+nim	begin	multipart.html#begin,MultiPartWriterRef	proc begin(mpw: MultiPartWriterRef): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		570
+nim	begin	multipart.html#begin,MultiPartWriter	proc begin(mpw: var MultiPartWriter)		582
+nim	beginPart	multipart.html#beginPart,MultiPartWriterRef,string,string,HttpTable	proc beginPart(mpw: MultiPartWriterRef; name: string; filename: string;\n          headers: HttpTable): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		593
+nim	beginPart	multipart.html#beginPart,MultiPartWriter,string,string,HttpTable	proc beginPart(mpw: var MultiPartWriter; name: string; filename: string;\n          headers: HttpTable)		611
+nim	write	multipart.html#write,MultiPartWriterRef,pointer,int	proc write(mpw: MultiPartWriterRef; pbytes: pointer; nbytes: int): InternalRaisesFuture[\n    void, (CancelledError, HttpWriteError)]		628
+nim	write	multipart.html#write,MultiPartWriterRef,seq[byte]	proc write(mpw: MultiPartWriterRef; data: seq[byte]): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		639
+nim	write	multipart.html#write,MultiPartWriterRef,string	proc write(mpw: MultiPartWriterRef; data: string): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		650
+nim	write	multipart.html#write,MultiPartWriter,pointer,int	proc write(mpw: var MultiPartWriter; pbytes: pointer; nbytes: int)		660
+nim	write	multipart.html#write,MultiPartWriter,openArray[byte]	proc write(mpw: var MultiPartWriter; data: openArray[byte])		669
+nim	write	multipart.html#write,MultiPartWriter,openArray[char]	proc write(mpw: var MultiPartWriter; data: openArray[char])		675
+nim	finishPart	multipart.html#finishPart,MultiPartWriterRef	proc finishPart(mpw: MultiPartWriterRef): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		682
+nim	finishPart	multipart.html#finishPart,MultiPartWriter	proc finishPart(mpw: var MultiPartWriter)		692
+nim	finish	multipart.html#finish,MultiPartWriterRef	proc finish(mpw: MultiPartWriterRef): InternalRaisesFuture[void,\n    (CancelledError, HttpWriteError)]		701
+nim	finish	multipart.html#finish,MultiPartWriter	proc finish(mpw: var MultiPartWriter): seq[byte]		713
+nimgrp	finish	multipart.html#finish-procs-all	proc		700
+nimgrp	beginpart	multipart.html#beginPart-procs-all	proc		591
+nimgrp	write	multipart.html#write-procs-all	proc		627
+nimgrp	init	multipart.html#init-procs-all	proc		123
+nimgrp	closewait	multipart.html#closeWait-procs-all	proc		277
+nimgrp	begin	multipart.html#begin-procs-all	proc		569
+nimgrp	new	multipart.html#new-procs-all	proc		146
+nimgrp	finishpart	multipart.html#finishPart-procs-all	proc		681
+nimgrp	ateom	multipart.html#atEoM-procs-all	proc		311

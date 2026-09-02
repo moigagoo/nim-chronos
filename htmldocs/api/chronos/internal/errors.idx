@@ -1,0 +1,4 @@
+nimTitle	errors	internal/errors.html	module chronos/internal/errors		0
+nim	AsyncError	internal/errors.html#AsyncError	object AsyncError		2
+nim	AsyncTimeoutError	internal/errors.html#AsyncTimeoutError	object AsyncTimeoutError		4
+nim	AsyncExceptionError	internal/errors.html#AsyncExceptionError	object AsyncExceptionError		7

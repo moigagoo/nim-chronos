@@ -1,0 +1,12 @@
+nimTitle	httpbodyrw	httpbodyrw.html	module chronos/apps/http/httpbodyrw		0
+nim	HttpBodyReaderTrackerName	httpbodyrw.html#HttpBodyReaderTrackerName	const HttpBodyReaderTrackerName		17
+nim	HttpBodyWriterTrackerName	httpbodyrw.html#HttpBodyWriterTrackerName	const HttpBodyWriterTrackerName		19
+nim	HttpBodyReader	httpbodyrw.html#HttpBodyReader	type HttpBodyReader		23
+nim	HttpBodyWriter	httpbodyrw.html#HttpBodyWriter	type HttpBodyWriter		27
+nim	newHttpBodyReader	httpbodyrw.html#newHttpBodyReader,varargs[AsyncStreamReader]	proc newHttpBodyReader(streams: varargs[AsyncStreamReader]): HttpBodyReader		31
+nim	closeWait	httpbodyrw.html#closeWait,HttpBodyReader	proc closeWait(bstream: HttpBodyReader): InternalRaisesFuture[void, void]		42
+nim	newHttpBodyWriter	httpbodyrw.html#newHttpBodyWriter,varargs[AsyncStreamWriter]	proc newHttpBodyWriter(streams: varargs[AsyncStreamWriter]): HttpBodyWriter		56
+nim	closeWait	httpbodyrw.html#closeWait,HttpBodyWriter	proc closeWait(bstream: HttpBodyWriter): InternalRaisesFuture[void, void]		67
+nim	hasOverflow	httpbodyrw.html#hasOverflow,HttpBodyReader	proc hasOverflow(bstream: HttpBodyReader): bool		79
+nim	closed	httpbodyrw.html#closed	proc closed(bstream: HttpBodyReader | HttpBodyWriter): bool		95
+nimgrp	closewait	httpbodyrw.html#closeWait-procs-all	proc		42

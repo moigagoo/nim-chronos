@@ -1,0 +1,7 @@
+nimTitle	debugutils	chronos/debugutils.html	module chronos/debugutils		0
+nim	AllFutureStates	chronos/debugutils.html#AllFutureStates	const AllFutureStates		19
+nim	WithoutCompleted	chronos/debugutils.html#WithoutCompleted	const WithoutCompleted		21
+nim	OnlyPending	chronos/debugutils.html#OnlyPending	const OnlyPending		23
+nim	OnlyCompleted	chronos/debugutils.html#OnlyCompleted	const OnlyCompleted		24
+nim	dumpPendingFutures	chronos/debugutils.html#dumpPendingFutures	proc dumpPendingFutures(filter = AllFutureStates): string		26
+nim	pendingFuturesCount	chronos/debugutils.html#pendingFuturesCount,set[FutureState]	proc pendingFuturesCount(filter: set[FutureState]): uint		56

@@ -1,0 +1,7 @@
+nimTitle	httpagent	httpagent.html	module chronos/apps/http/httpagent		0
+nim	ChronosName	httpagent.html#ChronosName	const ChronosName		15
+nim	ChronosMajor	httpagent.html#ChronosMajor	const ChronosMajor		17
+nim	ChronosMinor	httpagent.html#ChronosMinor	const ChronosMinor		19
+nim	ChronosPatch	httpagent.html#ChronosPatch	const ChronosPatch		21
+nim	ChronosVersion	httpagent.html#ChronosVersion	const ChronosVersion		23
+nim	ChronosIdent	httpagent.html#ChronosIdent	const ChronosIdent		25

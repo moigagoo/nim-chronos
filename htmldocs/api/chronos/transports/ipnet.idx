@@ -1,0 +1,59 @@
+nimTitle	ipnet	chronos/transports/ipnet.html	module chronos/transports/ipnet		0
+nim	IpMask	chronos/transports/ipnet.html#IpMask	object IpMask		20
+nim	IpNet	chronos/transports/ipnet.html#IpNet	object IpNet		29
+nim	`==`	chronos/transports/ipnet.html#==,IpMask,IpMask	proc `==`(m1, m2: IpMask): bool		33
+nim	init	chronos/transports/ipnet.html#init,typedesc[IpMask],AddressFamily,int	proc init(t: typedesc[IpMask]; family: AddressFamily; prefix: int): IpMask		47
+nim	init	chronos/transports/ipnet.html#init,typedesc[IpMask],TransportAddress	proc init(t: typedesc[IpMask]; netmask: TransportAddress): IpMask		78
+nim	initIp	chronos/transports/ipnet.html#initIp,typedesc[IpMask],string	proc initIp(t: typedesc[IpMask]; netmask: string): IpMask		92
+nim	init	chronos/transports/ipnet.html#init,typedesc[IpMask],string	proc init(t: typedesc[IpMask]; netmask: string): IpMask		104
+nim	toIPv6	chronos/transports/ipnet.html#toIPv6,TransportAddress	proc toIPv6(address: TransportAddress): TransportAddress		158
+nim	isV4Mapped	chronos/transports/ipnet.html#isV4Mapped,TransportAddress	proc isV4Mapped(address: TransportAddress): bool		178
+nim	toIPv4	chronos/transports/ipnet.html#toIPv4,TransportAddress	proc toIPv4(address: TransportAddress): TransportAddress		193
+nim	mask	chronos/transports/ipnet.html#mask,TransportAddress,IpMask	proc mask(a: TransportAddress; m: IpMask): TransportAddress		213
+nim	prefix	chronos/transports/ipnet.html#prefix,IpMask	proc prefix(mask: IpMask): int		266
+nim	subnetMask	chronos/transports/ipnet.html#subnetMask,IpMask	proc subnetMask(mask: IpMask): TransportAddress		306
+nim	`$`	chronos/transports/ipnet.html#$,IpMask	proc `$`(mask: IpMask; include0x = false): string		320
+nim	ip	chronos/transports/ipnet.html#ip,IpMask	proc ip(mask: IpMask): string		353
+nim	init	chronos/transports/ipnet.html#init,typedesc[IpNet],TransportAddress,int	proc init(t: typedesc[IpNet]; host: TransportAddress; prefix: int): IpNet		366
+nim	init	chronos/transports/ipnet.html#init,typedesc[IpNet],TransportAddress,TransportAddress	proc init(t: typedesc[IpNet]; host, mask: TransportAddress): IpNet		372
+nim	init	chronos/transports/ipnet.html#init,typedesc[IpNet],TransportAddress,IpMask	proc init(t: typedesc[IpNet]; host: TransportAddress; mask: IpMask): IpNet		380
+nim	init	chronos/transports/ipnet.html#init,typedesc[IpNet],string	proc init(t: typedesc[IpNet]; network: string): IpNet		386
+nim	`==`	chronos/transports/ipnet.html#==,IpNet,IpNet	proc `==`(n1, n2: IpNet): bool		438
+nim	contains	chronos/transports/ipnet.html#contains,IpNet,TransportAddress	proc contains(net: IpNet; address: TransportAddress): bool		451
+nim	broadcast	chronos/transports/ipnet.html#broadcast,IpNet	proc broadcast(net: IpNet): TransportAddress		460
+nim	subnetMask	chronos/transports/ipnet.html#subnetMask,IpNet	proc subnetMask(net: IpNet): TransportAddress		482
+nim	network	chronos/transports/ipnet.html#network,IpNet	proc network(net: IpNet): TransportAddress		486
+nim	`and`	chronos/transports/ipnet.html#and,TransportAddress,TransportAddress	proc `and`(address1, address2: TransportAddress): TransportAddress		491
+nim	`or`	chronos/transports/ipnet.html#or,TransportAddress,TransportAddress	proc `or`(address1, address2: TransportAddress): TransportAddress		517
+nim	`not`	chronos/transports/ipnet.html#not,TransportAddress	proc `not`(address: TransportAddress): TransportAddress		543
+nim	`+`	chronos/transports/ipnet.html#+,TransportAddress,	proc `+`(address: TransportAddress; v: int | uint): TransportAddress		560
+nim	`-`	chronos/transports/ipnet.html#-,TransportAddress,	proc `-`(address: TransportAddress; v: int | uint): TransportAddress		610
+nim	inc	chronos/transports/ipnet.html#inc,TransportAddress,int	proc inc(address: var TransportAddress; v: int = 1)		660
+nim	dec	chronos/transports/ipnet.html#dec,TransportAddress,int	proc dec(address: var TransportAddress; v: int = 1)		664
+nim	`$`	chronos/transports/ipnet.html#$,IpNet	proc `$`(net: IpNet): string		668
+nim	isNone	chronos/transports/ipnet.html#isNone,TransportAddress	proc isNone(address: TransportAddress): bool		696
+nim	isZero	chronos/transports/ipnet.html#isZero,TransportAddress	proc isZero(address: TransportAddress): bool		701
+nim	isUnspecified	chronos/transports/ipnet.html#isUnspecified,TransportAddress	proc isUnspecified(address: TransportAddress): bool		715
+nim	isMulticast	chronos/transports/ipnet.html#isMulticast,TransportAddress	proc isMulticast(address: TransportAddress): bool		719
+nim	isUnicast	chronos/transports/ipnet.html#isUnicast,TransportAddress	proc isUnicast(address: TransportAddress): bool		733
+nim	isInterfaceLocalMulticast	chronos/transports/ipnet.html#isInterfaceLocalMulticast,TransportAddress	proc isInterfaceLocalMulticast(address: TransportAddress): bool		744
+nim	isLinkLocalMulticast	chronos/transports/ipnet.html#isLinkLocalMulticast,TransportAddress	proc isLinkLocalMulticast(address: TransportAddress): bool		756
+nim	isUniqueLocal	chronos/transports/ipnet.html#isUniqueLocal,TransportAddress	proc isUniqueLocal(address: TransportAddress): bool		768
+nim	isUnicastLinkLocal	chronos/transports/ipnet.html#isUnicastLinkLocal,TransportAddress	proc isUnicastLinkLocal(address: TransportAddress): bool		780
+nim	isLoopback	chronos/transports/ipnet.html#isLoopback,TransportAddress	proc isLoopback(address: TransportAddress): bool		798
+nim	isAnyLocal	chronos/transports/ipnet.html#isAnyLocal,TransportAddress	proc isAnyLocal(address: TransportAddress): bool		813
+nim	isLinkLocal	chronos/transports/ipnet.html#isLinkLocal,TransportAddress	proc isLinkLocal(address: TransportAddress): bool		828
+nim	isLinkLocalUnicast	chronos/transports/ipnet.html#isLinkLocalUnicast,TransportAddress	proc isLinkLocalUnicast(address: TransportAddress): bool		842
+nim	isSiteLocal	chronos/transports/ipnet.html#isSiteLocal,TransportAddress	proc isSiteLocal(address: TransportAddress): bool		845
+nim	isPrivate	chronos/transports/ipnet.html#isPrivate,TransportAddress	proc isPrivate(address: TransportAddress): bool		861
+nim	isGlobalMulticast	chronos/transports/ipnet.html#isGlobalMulticast,TransportAddress	proc isGlobalMulticast(address: TransportAddress): bool		865
+nim	isShared	chronos/transports/ipnet.html#isShared,TransportAddress	proc isShared(address: TransportAddress): bool		880
+nim	isBroadcast	chronos/transports/ipnet.html#isBroadcast,TransportAddress	proc isBroadcast(address: TransportAddress): bool		893
+nim	isBenchmarking	chronos/transports/ipnet.html#isBenchmarking,TransportAddress	proc isBenchmarking(address: TransportAddress): bool		905
+nim	isDocumentation	chronos/transports/ipnet.html#isDocumentation,TransportAddress	proc isDocumentation(address: TransportAddress): bool		924
+nim	isReserved	chronos/transports/ipnet.html#isReserved,TransportAddress	proc isReserved(address: TransportAddress): bool		943
+nim	isGlobal	chronos/transports/ipnet.html#isGlobal,TransportAddress	proc isGlobal(address: TransportAddress): bool		960
+nimgrp	==	chronos/transports/ipnet.html#==-procs-all	proc		33
+nimgrp	$	chronos/transports/ipnet.html#$-procs-all	proc		320
+nimgrp	init	chronos/transports/ipnet.html#init-procs-all	proc		47
+nimgrp	subnetmask	chronos/transports/ipnet.html#subnetMask-procs-all	proc		306

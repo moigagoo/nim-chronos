@@ -1,0 +1,101 @@
+nimTitle	asyncfutures	internal/asyncfutures.html	module chronos/internal/asyncfutures		0
+nim	LocCreateIndex	internal/asyncfutures.html#LocCreateIndex.t	template LocCreateIndex(): auto		35
+nim	LocFinishIndex	internal/asyncfutures.html#LocFinishIndex.t	template LocFinishIndex(): auto		37
+nim	LocCompleteIndex	internal/asyncfutures.html#LocCompleteIndex.t	template LocCompleteIndex(): untyped		39
+nim	`[]`	internal/asyncfutures.html#[],array[LocationKind,ptr.SrcLoc],int	proc `[]`(loc: array[LocationKind, ptr SrcLoc]; v: int): ptr SrcLoc		42
+nim	FutureStr	internal/asyncfutures.html#FutureStr	type FutureStr		50
+nim	FutureSeq	internal/asyncfutures.html#FutureSeq	type FutureSeq		54
+nim	FuturePendingError	internal/asyncfutures.html#FuturePendingError	object FuturePendingError		58
+nim	FutureCompletedError	internal/asyncfutures.html#FutureCompletedError	object FutureCompletedError		60
+nim	Finished	internal/asyncfutures.html#Finished.t	template Finished()		74
+nim	Finished	internal/asyncfutures.html#Finished.t,typeFutureState	template Finished(T: type FutureState): FutureState		75
+nim	newFuture	internal/asyncfutures.html#newFuture.t,static[string],static[FutureFlags]	template newFuture[T](fromProc: static[string] = ""; flags: static[FutureFlags] = {}): auto		100
+nim	newInternalRaisesFuture	internal/asyncfutures.html#newInternalRaisesFuture.t,static[string]	template newInternalRaisesFuture[T, E](fromProc: static[string] = ""): auto		112
+nim	newFutureSeq	internal/asyncfutures.html#newFutureSeq.t,static[string]	template newFutureSeq[A, B](fromProc: static[string] = ""): FutureSeq[A, B]		119
+nim	newFutureStr	internal/asyncfutures.html#newFutureStr.t,static[string]	template newFutureStr[T](fromProc: static[string] = ""): FutureStr[T]		127
+nim	done	internal/asyncfutures.html#done,FutureBase	proc done(future: FutureBase): bool		135
+nim	complete	internal/asyncfutures.html#complete.t,Future[T: not void],template (T: typedesc): typedescT: not void	template complete[T: not void](future: Future[T]; val: chronosSink T)		203
+nim	complete	internal/asyncfutures.html#complete.t,Future[void]	template complete(future: Future[void])		211
+nim	internalFail	internal/asyncfutures.html#internalFail.t,FutureBase,ref.CatchableError	template internalFail(future: FutureBase; error: ref CatchableError)		226
+nim	fail	internal/asyncfutures.html#fail.t,Future[T],ref.CatchableError,staticbool	template fail[T](future: Future[T]; error: ref CatchableError; warn: static bool = false)		230
+nim	fail	internal/asyncfutures.html#fail.t,InternalRaisesFuture[T,E],ref.CatchableError,staticbool	template fail[T, E](future: InternalRaisesFuture[T, E]; error: ref CatchableError;\n           warn: static bool = true)		237
+nim	cancelAndSchedule	internal/asyncfutures.html#cancelAndSchedule.t,FutureBase	template cancelAndSchedule(future: FutureBase)		256
+nim	tryCancel	internal/asyncfutures.html#tryCancel.t,FutureBase	template tryCancel(future: FutureBase): bool		294
+nim	addCallback	internal/asyncfutures.html#addCallback,FutureBase,CallbackFunc,pointer	proc addCallback(future: FutureBase; cb: CallbackFunc; udata: pointer)		301
+nim	addCallback	internal/asyncfutures.html#addCallback,FutureBase,CallbackFunc	proc addCallback(future: FutureBase; cb: CallbackFunc)		314
+nim	removeCallback	internal/asyncfutures.html#removeCallback,FutureBase,CallbackFunc,pointer	proc removeCallback(future: FutureBase; cb: CallbackFunc; udata: pointer)		320
+nim	removeCallback	internal/asyncfutures.html#removeCallback,FutureBase,CallbackFunc	proc removeCallback(future: FutureBase; cb: CallbackFunc)		333
+nim	callback=	internal/asyncfutures.html#callback=,FutureBase,CallbackFunc,pointer	proc callback=(future: FutureBase; cb: CallbackFunc; udata: pointer)		336
+nim	callback=	internal/asyncfutures.html#callback=,FutureBase,CallbackFunc	proc callback=(future: FutureBase; cb: CallbackFunc)		348
+nim	cancelCallback=	internal/asyncfutures.html#cancelCallback=,FutureBase,CallbackFunc	proc cancelCallback=(future: FutureBase; cb: CallbackFunc)		357
+nim	futureContinue	internal/asyncfutures.html#futureContinue,FutureBase	proc futureContinue(fut: FutureBase)		369
+nim	internalRaiseIfError	internal/asyncfutures.html#internalRaiseIfError.m,FutureBase,typed	macro internalRaiseIfError(fut: FutureBase; info: typed)		493
+nim	internalRaiseIfError	internal/asyncfutures.html#internalRaiseIfError.m,InternalRaisesFuture,typed,typed	macro internalRaiseIfError(fut: InternalRaisesFuture; raises, info: typed)		507
+nim	read	internal/asyncfutures.html#read,Future[T: not void]	proc read[T: not void](fut: Future[T]): lent T		571
+nim	read	internal/asyncfutures.html#read,Future[void]	proc read(fut: Future[void])		583
+nim	readError	internal/asyncfutures.html#readError,FutureBase	proc readError(fut: FutureBase): ref CatchableError		595
+nim	waitFor	internal/asyncfutures.html#waitFor,Future[T: not void]	proc waitFor[T: not void](fut: Future[T]): lent T		642
+nim	waitFor	internal/asyncfutures.html#waitFor,Future[void]	proc waitFor(fut: Future[void])		654
+nim	asyncSpawn	internal/asyncfutures.html#asyncSpawn,Future[void]	proc asyncSpawn(future: Future[void])		665
+nim	asyncCheck	internal/asyncfutures.html#asyncCheck,Future[T]	proc asyncCheck[T](future: Future[T])		691
+nim	orImpl	internal/asyncfutures.html#orImpl.t,Future[T],Future[Y]	template orImpl[T, Y](fut1: Future[T]; fut2: Future[Y]): untyped		713
+nim	`or`	internal/asyncfutures.html#or,Future[T],Future[Y]	proc `or`[T, Y](fut1: Future[T]; fut2: Future[Y]): Future[void]		761
+nim	cancelSoon	internal/asyncfutures.html#cancelSoon.t,FutureBase,CallbackFunc,pointer	template cancelSoon(fut: FutureBase; cb: CallbackFunc; udata: pointer)		818
+nim	cancelSoon	internal/asyncfutures.html#cancelSoon.t,FutureBase,CallbackFunc	template cancelSoon(fut: FutureBase; cb: CallbackFunc)		821
+nim	cancelSoon	internal/asyncfutures.html#cancelSoon.t,FutureBase,InternalAsyncCallback	template cancelSoon(fut: FutureBase; acb: AsyncCallback)		824
+nim	cancelSoon	internal/asyncfutures.html#cancelSoon.t,FutureBase	template cancelSoon(fut: FutureBase)		827
+nim	cancel	internal/asyncfutures.html#cancel.t,FutureBase	template cancel(future: FutureBase)		830
+nim	cancelAndWait	internal/asyncfutures.html#cancelAndWait.t,FutureBase	template cancelAndWait(future: FutureBase): Future[void].Raising([])		869
+nim	cancelAndWait	internal/asyncfutures.html#cancelAndWait.t,SomeFuture	template cancelAndWait(future: SomeFuture): Future[void].Raising([])		878
+nim	cancelAndWait	internal/asyncfutures.html#cancelAndWait.t,varargs[FutureBase]	template cancelAndWait(futs: varargs[FutureBase]): Future[void].Raising([])		887
+nim	cancelAndWait	internal/asyncfutures.html#cancelAndWait.t,openArray[SomeFuture]	template cancelAndWait(futs: openArray[SomeFuture]): Future[void].Raising([])		902
+nim	noCancel	internal/asyncfutures.html#noCancel,F	proc noCancel[F: SomeFuture](future: F): auto		917
+nim	allFutures	internal/asyncfutures.html#allFutures,varargs[FutureBase]	proc allFutures(futs: varargs[FutureBase]): InternalRaisesFuture[void,\n    (CancelledError,)]		963
+nim	allFutures	internal/asyncfutures.html#allFutures,varargs[Future[T]]	proc allFutures[T](futs: varargs[Future[T]]): InternalRaisesFuture[void,\n    (CancelledError,)]		1001
+nim	allFutures	internal/asyncfutures.html#allFutures,varargs[InternalRaisesFuture[T,E]]	proc allFutures[T, E](futs: varargs[InternalRaisesFuture[T, E]]): InternalRaisesFuture[\n    void, (CancelledError,)]		1012
+nim	allFinished	internal/asyncfutures.html#allFinished,varargs[F]	proc allFinished[F: SomeFuture](futs: varargs[F]): InternalRaisesFuture[seq[F],\n    (CancelledError,)]		1023
+nim	one	internal/asyncfutures.html#one,SomeFuture,varargs[SomeFuture]	proc one(fut0: SomeFuture; futs: varargs[SomeFuture]): InternalRaisesFuture[\n    SomeFuture, (CancelledError,)]		1116
+nim	one	internal/asyncfutures.html#one,openArray[SomeFuture]	proc one(futs: openArray[SomeFuture]): InternalRaisesFuture[SomeFuture,\n    (ValueError, CancelledError)]		1131
+nim	race	internal/asyncfutures.html#race,FutureBase,varargs[FutureBase]	proc race(fut0: FutureBase; futs: varargs[FutureBase]): InternalRaisesFuture[\n    FutureBase, (CancelledError,)]		1152
+nim	one	internal/asyncfutures.html#one	proc one(_: typeof([]))		1164
+nim	race	internal/asyncfutures.html#race,openArray[FutureBase]	proc race(futs: openArray[FutureBase]): InternalRaisesFuture[FutureBase,\n    (ValueError, CancelledError)]		1167
+nim	race	internal/asyncfutures.html#race,SomeFuture,openArray[SomeFuture]	proc race(fut0: SomeFuture; futs: openArray[SomeFuture]): InternalRaisesFuture[\n    SomeFuture, (CancelledError,)]		1186
+nim	race	internal/asyncfutures.html#race,openArray[SomeFuture]	proc race(futs: openArray[SomeFuture]): InternalRaisesFuture[SomeFuture,\n    (ValueError, CancelledError)]		1199
+nim	race	internal/asyncfutures.html#race	proc race(_: typeof([]))		1217
+nim	sleepAsync	internal/asyncfutures.html#sleepAsync,Duration	proc sleepAsync(duration: Duration): InternalRaisesFuture[void, (CancelledError,)]		1258
+nim	sleepAsync	internal/asyncfutures.html#sleepAsync,int	proc sleepAsync(ms: int): InternalRaisesFuture[void, (CancelledError,)]		1281
+nim	stepsAsync	internal/asyncfutures.html#stepsAsync,int	proc stepsAsync(number: int): InternalRaisesFuture[void, (CancelledError,)]		1285
+nim	idleAsync	internal/asyncfutures.html#idleAsync	proc idleAsync(): InternalRaisesFuture[void, (CancelledError,)]		1313
+nim	withTimeout	internal/asyncfutures.html#withTimeout,Future[T],Duration	proc withTimeout[T](fut: Future[T]; timeout: Duration): InternalRaisesFuture[bool,\n    (CancelledError,)]		1332
+nim	withTimeout	internal/asyncfutures.html#withTimeout,Future[T],int	proc withTimeout[T](fut: Future[T]; timeout: int): Future[bool]		1407
+nim	wait	internal/asyncfutures.html#wait,Future[T]	proc wait[T](fut: Future[T]; timeout = InfiniteDuration): Future[T]		1532
+nim	wait	internal/asyncfutures.html#wait,Future[T],int	proc wait[T](fut: Future[T]; timeout = -1): Future[T]		1549
+nim	wait	internal/asyncfutures.html#wait,Future[T],SomeFuture	proc wait[T](fut: Future[T]; deadline: SomeFuture): Future[T]		1558
+nim	join	internal/asyncfutures.html#join,FutureBase	proc join(future: FutureBase): InternalRaisesFuture[void, (CancelledError,)]		1581
+nim	join	internal/asyncfutures.html#join,SomeFuture	proc join(future: SomeFuture): InternalRaisesFuture[void, (CancelledError,)]		1606
+nim	read	internal/asyncfutures.html#read,InternalRaisesFuture[T: not void,E]	proc read[T: not void; E](fut: InternalRaisesFuture[T, E]): lent T		1679
+nim	read	internal/asyncfutures.html#read,InternalRaisesFuture[void,E]	proc read[E](fut: InternalRaisesFuture[void, E])		1691
+nim	waitFor	internal/asyncfutures.html#waitFor,InternalRaisesFuture[T: not void,E]	proc waitFor[T: not void; E](fut: InternalRaisesFuture[T, E]): lent T		1703
+nim	waitFor	internal/asyncfutures.html#waitFor,InternalRaisesFuture[void,E]	proc waitFor[E](fut: InternalRaisesFuture[void, E])		1715
+nim	`or`	internal/asyncfutures.html#or,InternalRaisesFuture[T,E1],InternalRaisesFuture[Y,E2]	proc `or`[T, Y, E1, E2](fut1: InternalRaisesFuture[T, E1];\n                   fut2: InternalRaisesFuture[Y, E2]): auto		1726
+nim	wait	internal/asyncfutures.html#wait,InternalRaisesFuture	proc wait(fut: InternalRaisesFuture; timeout = InfiniteDuration): auto		1735
+nim	wait	internal/asyncfutures.html#wait,InternalRaisesFuture,SomeFuture	proc wait(fut: InternalRaisesFuture; deadline: SomeFuture): auto		1748
+nimgrp	join	internal/asyncfutures.html#join-procs-all	proc		1580
+nimgrp	one	internal/asyncfutures.html#one-procs-all	proc		1115
+nimgrp	race	internal/asyncfutures.html#race-procs-all	proc		1151
+nimgrp	removecallback	internal/asyncfutures.html#removeCallback-procs-all	proc		320
+nimgrp	wait	internal/asyncfutures.html#wait-procs-all	proc		1532
+nimgrp	waitfor	internal/asyncfutures.html#waitFor-procs-all	proc		642
+nimgrp	sleepasync	internal/asyncfutures.html#sleepAsync-procs-all	proc		1257
+nimgrp	read	internal/asyncfutures.html#read-procs-all	proc		571
+nimgrp	allfutures	internal/asyncfutures.html#allFutures-procs-all	proc		962
+nimgrp	withtimeout	internal/asyncfutures.html#withTimeout-procs-all	proc		1331
+nimgrp	or	internal/asyncfutures.html#or-procs-all	proc		761
+nimgrp	callback=	internal/asyncfutures.html#callback=-procs-all	proc		336
+nimgrp	addcallback	internal/asyncfutures.html#addCallback-procs-all	proc		301
+nimgrp	internalraiseiferror	internal/asyncfutures.html#internalRaiseIfError-macros-all	macro		493
+nimgrp	cancelandwait	internal/asyncfutures.html#cancelAndWait-templates-all	template		869
+nimgrp	fail	internal/asyncfutures.html#fail-templates-all	template		230
+nimgrp	complete	internal/asyncfutures.html#complete-templates-all	template		203
+nimgrp	cancelsoon	internal/asyncfutures.html#cancelSoon-templates-all	template		818
+nimgrp	Finished	internal/asyncfutures.html#Finished-templates-all	template		74

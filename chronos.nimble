@@ -1,0 +1,155 @@
+mode = ScriptMode.Verbose
+
+packageName   = "chronos"
+# keep in sync: chronos/apps/http/httpagent.nim
+version       = "4.4.0"
+author        = "Status Research & Development GmbH"
+description   = "Networking framework with async/await support"
+license       = "MIT or Apache License 2.0"
+skipDirs      = @["tests"]
+
+requires "nim >= 1.6.16",
+         "bearssl >= 0.2.13",
+         "httputils >= 0.5.1",
+         "results >= 0.5.0",
+         "stew >= 0.5.0",
+         "unittest2 >= 0.2.0"
+
+import os, strutils
+
+let nimc = getEnv("NIMC", "nim") # Which nim compiler to use
+let lang = getEnv("NIMLANG", "c") # Which backend (c/cpp/js)
+let flags = getEnv("NIMFLAGS", "") # Extra flags for the compiler
+let verbose = getEnv("V", "") notin ["", "0"]
+let platform = getEnv("PLATFORM", "")
+let testRunner = getEnv("NIM_TEST_RUNNER", "")
+let testSuccessMarker = getEnv("NIM_TEST_SUCCESS_MARKER", "")
+let testArguments =
+  when defined(windows):
+    [
+      "-d:debug -d:chronosDebug -d:useSysAssert -d:useGcAssert",
+      "-d:release",
+    ]
+  else:
+    [
+      "-d:debug -d:chronosDebug -d:useSysAssert -d:useGcAssert",
+      "-d:debug -d:chronosDebug -d:chronosEventEngine=poll -d:useSysAssert -d:useGcAssert",
+      "-d:release -d:chronosPreviewV5",
+    ]
+
+let cfg =
+  " --styleCheck:usages --styleCheck:error" &
+  (if verbose: "" else: " --verbosity:0 --hints:off") &
+  " --skipParentCfg --skipUserCfg --outdir:build " &
+  quoteShell("--nimcache:build/nimcache/$projectName")
+
+proc build(args, path: string) =
+  exec nimc & " " & lang & " " & cfg & " " & flags & " " & args & " " & path
+
+proc run(args, path: string) =
+  build args, path
+  let executable = "build/" & path.splitPath[1]
+  if testRunner.len == 0:
+    exec executable
+  else:
+    # Cross-compiled tests need adb or simctl instead of direct host execution.
+    exec testRunner & " " & quoteShell(executable)
+
+proc tryExec(cmd: string) =
+  try:
+    exec cmd
+  except Exception as e:
+    echo e.msg
+
+task examples, "Build examples":
+  # Build book examples
+  for file in listFiles("examples"):
+    if file.endsWith(".nim"):
+      build "--threads:on", file
+
+  # Build HTTP client tutorial examples
+  for chapterDir in listDirs("examples/http_client"):
+    withDir(chapterDir):
+      tryExec "nimble build"
+
+  # Build HTTP server tutorial examples
+  for chapterDir in listDirs("examples/http_server"):
+    withDir(chapterDir):
+      tryExec "nimble build"
+
+task benchmarks, "Run benchmarks":
+  # Make sure benchmarks compile
+  for f in walkDirRec("benchmarks"):
+
+    if f.contains("bench_") and f.endsWith(".nim"):
+      run "-d:release", f[0..^5]
+
+task test, "Run all tests":
+  for args in testArguments:
+    # First run tests with `refc` memory manager.
+    run args & " --mm:refc", "tests/testall"
+    if (NimMajor, NimMinor) >= (2, 2): # ORC on 2.0 is too broken to investigate
+      run args & " --mm:orc", "tests/testall"
+
+  # Make sure benchmarks compile
+  for f in walkDirRec("benchmarks"):
+    if f.startsWith("bench_") and f.endsWith(".nim"):
+      build "", f[0..^5]
+
+  if testSuccessMarker.len > 0:
+    # Mobile CI uses this to confirm that the full task reached its end.
+    writeFile(testSuccessMarker, "")
+
+task test_v3_compat, "Run all tests in v3 compatibility mode":
+  for args in testArguments:
+    if (NimMajor, NimMinor) >= (2, 2):
+      # First run tests with `refc` memory manager.
+      run args & " --mm:refc -d:chronosHandleException", "tests/testall"
+
+    run args & " -d:chronosHandleException", "tests/testall"
+
+task test_libbacktrace, "test with libbacktrace":
+  if platform != "x86":
+    let allArgs = @[
+      "-d:release --debugger:native -d:chronosStackTrace -d:nimStackTraceOverride --import:libbacktrace",
+    ]
+
+    for args in allArgs:
+      # First run tests with `refc` memory manager.
+      run args & " --mm:refc", "tests/testall"
+      if (NimMajor, NimMinor) >= (2, 2):
+        run args & " --mm:orc", "tests/testall"
+
+task apidocs, "Generate the API docs":
+  tryExec nimc & " doc " &
+    "--git.url:https://github.com/status-im/nim-chronos --git.commit:master --outdir:htmldocs/api --project chronos"
+  tryExec nimc & " doc " &
+    "--git.url:https://github.com/status-im/nim-chronos --git.commit:master --outdir:htmldocs/api/chronos --project chronos/threadsync"
+  tryExec nimc & " doc " &
+    "--git.url:https://github.com/status-im/nim-chronos --git.commit:master " &
+    "--outdir:htmldocs/api/chronos/apps/http --project chronos/apps/http/httpclient"
+  tryExec nimc & " doc " &
+    "--git.url:https://github.com/status-im/nim-chronos --git.commit:master " &
+    "--outdir:htmldocs/api/chronos/apps/http --project chronos/apps/http/httpserver"
+  tryExec nimc & " doc " &
+    "--git.url:https://github.com/status-im/nim-chronos --git.commit:master " &
+    "--outdir:htmldocs/api/chronos/apps/http --project chronos/apps/http/httpdebug"
+  tryExec nimc & " doc " &
+    "--git.url:https://github.com/status-im/nim-chronos --git.commit:master " &
+    "--outdir:htmldocs/api/chronos/apps/http --project chronos/apps/http/shttpserver"
+
+task bookindex, "Generate the book index":
+  exec nimc & " book --index:only book"
+
+task book, "Generate the book":
+  exec nimc & " book " &
+    "--git.url:https://github.com/status-im/nim-chronos --git.commit:master " &
+    "book"
+  cpDir("book/img", "htmldocs/img")
+  cpFile("htmldocs/introduction.html", "htmldocs/index.html")
+
+task docs, "Generate the documentation":
+  rmDir "htmldocs"
+  exec "nimble apidocs"
+  exec "nimble bookindex"
+  exec "nimble book"
